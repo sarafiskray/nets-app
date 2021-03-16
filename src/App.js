@@ -1,16 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
+import Lookup from './Lookup.js'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-         In Progress
-        </p>
-        
-      </header>
+      <Lookup />
     </div>
   );
 }
