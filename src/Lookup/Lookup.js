@@ -1,12 +1,17 @@
 import React, { useState, Fragment } from 'react';
 import axios from 'axios';
 import Search from './Search.js'
+import Results from './Results.js'
+import Player from './Player.js'
 
-const Lookup = () => {
+const Lookup = (props) => {
+
+    const {setPlayerOne, setPlayerTwo} = props;
 
     const [fName, setfName] = useState('');
     const [lName, setlName] = useState('');
 
+    const [results, setResults] = useState([]);
 
     let fNameOptions = {
         method: 'GET',
@@ -26,16 +31,14 @@ const Lookup = () => {
         }
       };
 
-    let searchResults = []
-
     const searchfName = event => {
         event.preventDefault();
 
         fNameOptions['url'] += fName;
         axios.request(fNameOptions)
         .then ( resp => {
-            searchResults = resp.data.api.players
-            console.log(searchResults)
+            setResults(resp.data.api.players)
+            
         })
         .catch ( err => {
             console.log(err)
@@ -49,24 +52,47 @@ const Lookup = () => {
         lNameOptions['url'] += lName;
         axios.request(lNameOptions)
         .then ( resp => {
-            searchResults = resp.data.api.players
-            console.log(searchResults)
+            setResults(resp.data.api.players)
         })
         .catch ( err => {
             console.log(err)
         })
     } 
 
+    let listPlayers
+    if (results.length > 0) {
+        listPlayers = results.map ( item => {
+            return (
+                <Player 
+                    key={item.playerId}
+                    id = {item.playerId}
+                    firstName = {item.firstName}
+                    lastName = {item.lastName}
+                    teamId = {item.teamId}
+                />
+            )
+        })  
+    } 
+    else {
+        listPlayers = []
+    }
+    //console.log(listPlayers)
    
     return (
-        <Search 
-            fName = {fName}
-            lName = {lName}
-            setfName = {setfName}
-            setlName = {setlName}
-            searchlName = {searchlName}
-            searchfName = {searchfName}
-        />
+        <Fragment>
+            <Search 
+                fName = {fName}
+                lName = {lName}
+                setfName = {setfName}
+                setlName = {setlName}
+                searchlName = {searchlName}
+                searchfName = {searchfName}
+            />
+            <Results 
+                setPlayerOne = {setPlayerOne}
+                listPlayers = {listPlayers}
+            />
+        </Fragment>
     )
 }
 

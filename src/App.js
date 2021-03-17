@@ -11,7 +11,9 @@ function App() {
   
   return (
     <div className="App">
-      <Lookup />
+      <Lookup 
+        setPlayerOne = {setPlayerOne}
+      />
     </div>
   );
 }
