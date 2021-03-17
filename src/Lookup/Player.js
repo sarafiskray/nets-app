@@ -6,7 +6,6 @@ const Player = (props) => {
 
     const handleClick = (event) => {
         event.preventDefault()
-        
         setPlayerOne(id)
     }
 
