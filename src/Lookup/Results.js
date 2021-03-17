@@ -2,14 +2,12 @@ import React from 'react';
 
 const Results = (props) => {
 
-    const {setPlayerOne, listPlayers} = props;
-
-    console.log(listPlayers)
+    const {listPlayers} = props;
 
     return(
-        <div>
-            {listPlayers}
-        </div>
+        <ul>
+            { listPlayers }
+        </ul>
     )
 }
 

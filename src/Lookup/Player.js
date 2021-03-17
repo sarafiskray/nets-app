@@ -2,12 +2,19 @@ import React from 'react';
 
 const Player = (props) => {
 
-    const { id, firstName, lastName, teamId } = props;
+    const { id, firstName, lastName, teamId , setPlayerOne} = props;
+
+    const handleClick = (event) => {
+        event.preventDefault()
+        
+        setPlayerOne(id)
+    }
+
 
     return (
-        <div>
+        <li onClick={handleClick}>
             <p> {firstName} {lastName}</p>
-        </div>
+        </li>
     )
 
 }

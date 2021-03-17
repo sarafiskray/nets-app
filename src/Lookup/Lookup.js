@@ -6,7 +6,7 @@ import Player from './Player.js'
 
 const Lookup = (props) => {
 
-    const {setPlayerOne, setPlayerTwo} = props;
+    const {setPlayerOne, setPlayerTwo, handleClick} = props;
 
     const [fName, setfName] = useState('');
     const [lName, setlName] = useState('');
@@ -69,6 +69,8 @@ const Lookup = (props) => {
                     firstName = {item.firstName}
                     lastName = {item.lastName}
                     teamId = {item.teamId}
+                    setPlayerOne = {setPlayerOne}
+                    handleClick = {handleClick}
                 />
             )
         })  

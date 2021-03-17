@@ -9,10 +9,13 @@ function App() {
   const [playerTwo, setPlayerTwo] = useState(0);
 
   
+  
+
   return (
     <div className="App">
       <Lookup 
-        setPlayerOne = {setPlayerOne}
+        setPlayerOne={setPlayerOne}
+        //handleClick={handleClick}
       />
     </div>
   );
