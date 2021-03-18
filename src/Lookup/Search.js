@@ -12,15 +12,16 @@ const Search = (props) => {
                 onChange={event => setfName(event.target.value)}
                 placeholder="First Name"
             />
-            <button type="submit">Search by first name</button>
+            <button className="btn grey" type="submit">Search by first name</button>
         </form>
+        <p className="center-align">OR</p>
         <form onSubmit={searchlName}>
             <input
                 value={lName}
                 onChange={event => setlName(event.target.value)}
                 placeholder="Last Name"
             />
-            <button type="submit">Search by last name</button>
+            <button className="btn grey" type="submit">Search by last name</button>
         </form>
     </Fragment>
     )

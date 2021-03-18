@@ -20,20 +20,23 @@ function App() {
   console.log(playerTwoStats)
 
   return (
-    <div>
-      <Lookup 
-        setPlayer={setPlayerOne}
-        setPlayerStats={setPlayerOneStats}
-      />
-      <Lookup 
-        setPlayer={setPlayerTwo}
-        setPlayerStats={setPlayerTwoStats}
-      />
-
-      <Averages
-        playerOneStats={playerOneStats}
-        playerTwoStats={playerTwoStats}
-      />
+    <div className="container">
+      <div className="row">
+        <Lookup 
+          setPlayer={setPlayerOne}
+          setPlayerStats={setPlayerOneStats}
+        />
+        <Lookup 
+          setPlayer={setPlayerTwo}
+          setPlayerStats={setPlayerTwoStats}
+        />
+      </div>
+      <div className="row">
+        <Averages
+          playerOneStats={playerOneStats}
+          playerTwoStats={playerTwoStats}
+        />
+      </div>
     </div>
   );
 }
