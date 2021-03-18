@@ -62,7 +62,9 @@ const Averages = (props) => {
     }
 
     let playerOneAvgs = calculateAvgs(playerOneStats)
+    let playerTwoAvgs = calculateAvgs(playerTwoStats)
     console.log(playerOneAvgs)
+    console.log(playerTwoAvgs)
 
     return (
         <div>[Averages here]</div>
