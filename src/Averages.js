@@ -14,6 +14,7 @@ const Averages = (props) => {
             pts: 0,
             stls: 0,
             to: 0,
+            rebounds: 0,
             fgp: 0,
             tpp: 0,
             plusMinus: 0
@@ -25,6 +26,7 @@ const Averages = (props) => {
             let totalPts = 0;
             let totalStls = 0;
             let totalTo = 0;
+            let totalRebounds = 0;
             let totalFga = 0;
             let totalFgm = 0;
             let totalTpa = 0;
@@ -38,6 +40,7 @@ const Averages = (props) => {
                 totalPts += parseInt(stats[i].points)
                 totalStls += parseInt(stats[i].steals)
                 totalTo += parseInt(stats[i].turnovers)
+                totalRebounds += parseInt(stats[i].totReb)
                 totalFga += parseInt(stats[i].fga)
                 totalFgm += parseInt(stats[i].fgm)
                 totalTpa += parseInt(stats[i].tpa)
@@ -51,8 +54,9 @@ const Averages = (props) => {
             avgs['pts'] = totalPts / 10
             avgs['stls'] = totalStls / 10
             avgs['to'] = totalTo / 10
-            avgs['fgp'] = totalFgm / totalFga
-            avgs['tpp'] = totalTpm / totalTpa
+            avgs['rebounds'] = totalRebounds / 10
+            avgs['fgp'] = (totalFgm / totalFga).toFixed(1)
+            avgs['tpp'] = (totalTpm / totalTpa).toFixed(1)
             avgs['plusMinus'] = totalPlusMinus
             return avgs
         }
@@ -67,7 +71,62 @@ const Averages = (props) => {
     console.log(playerTwoAvgs)
 
     return (
-        <div>[Averages here]</div>
+        <div className="col s12">
+            <table className="centered">
+                <tbody>
+                    <tr>
+                        <td>{ playerOneAvgs["pts"] }</td>
+                        <td>PPG</td>
+                        <td>{ playerTwoAvgs["pts"] }</td>
+                    </tr>
+                    <tr>
+                        <td>{ playerOneAvgs["rebounds"] }</td>
+                        <td>RPG</td>
+                        <td>{ playerTwoAvgs["rebounds"] }</td>
+                    </tr>
+                    <tr>
+                        <td>{ playerOneAvgs["assists"] }</td>
+                        <td>APG</td>
+                        <td>{ playerTwoAvgs["assists"] }</td>
+                    </tr>
+                    <tr>
+                        <td>{ playerOneAvgs["stls"] }</td>
+                        <td>SPG</td>
+                        <td>{ playerTwoAvgs["stls"] }</td>
+                    </tr>
+                    <tr>
+                        <td>{ playerOneAvgs["blks"] }</td>
+                        <td>BPG</td>
+                        <td>{ playerTwoAvgs["blks"] }</td>
+                    </tr>
+                    <tr>
+                        <td>{ playerOneAvgs["to"] }</td>
+                        <td>TOPG</td>
+                        <td>{ playerTwoAvgs["to"] }</td>
+                    </tr>
+                    <tr>
+                        <td>{ playerOneAvgs["min"] }</td>
+                        <td>MPG</td>
+                        <td>{ playerTwoAvgs["min"] }</td>
+                    </tr>
+                    <tr>
+                        <td>{ playerOneAvgs["fgp"] }</td>
+                        <td>FG %</td>
+                        <td>{ playerTwoAvgs["fgp"] }</td>
+                    </tr>
+                    <tr>
+                        <td>{ playerOneAvgs["tpp"] }</td>
+                        <td>3P %</td>
+                        <td>{ playerTwoAvgs["tpp"] }</td>
+                    </tr>
+                    <tr>
+                        <td>{ playerOneAvgs["plusMinus"] }</td>
+                        <td>Total +/-</td>
+                        <td>{ playerTwoAvgs["plusMinus"] }</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     )
 }
 
