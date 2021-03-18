@@ -55,8 +55,8 @@ const Averages = (props) => {
             avgs['stls'] = totalStls / 10
             avgs['to'] = totalTo / 10
             avgs['rebounds'] = totalRebounds / 10
-            avgs['fgp'] = (totalFgm / totalFga).toFixed(1)
-            avgs['tpp'] = (totalTpm / totalTpa).toFixed(1)
+            avgs['fgp'] = ((totalFgm / totalFga) * 100).toFixed(1)
+            avgs['tpp'] = ((totalTpm / totalTpa) * 100).toFixed(1)
             avgs['plusMinus'] = totalPlusMinus
             return avgs
         }
