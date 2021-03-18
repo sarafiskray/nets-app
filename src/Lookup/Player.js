@@ -17,16 +17,18 @@ const Player = (props) => {
     const handleClick = (event) => {
         event.preventDefault()
         setPlayer(id)
-        //also set player stats
-        //where to make api call?
         statsOptions['url'] += id
         axios.request(statsOptions)
         .then ( resp => {
-            console.log(resp)
             let stats = resp.data.api.statistics
-            //temporary
-            setPlayerStats(stats.slice(stats.length - 10, stats.length))
-
+            let recentStats = []
+            let lastGameIndex = stats.length - 1
+            while (recentStats.length < 10) {
+                //still need to check if player played in game + all star
+                recentStats.unshift(stats[lastGameIndex])
+                lastGameIndex -=1
+            }
+            setPlayerStats(recentStats)
         })
         .catch ( err => {
             console.log(err)

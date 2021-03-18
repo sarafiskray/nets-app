@@ -1,8 +1,8 @@
-import logo from './logo.svg';
 import './App.css';
 import Lookup from './Lookup/Lookup.js';
 import React, { useState } from 'react';
-import axios from 'axios';
+import { LineChart, Line } from 'recharts';
+import Averages from './Averages.js'
 
 function App() {
 
@@ -12,16 +12,6 @@ function App() {
   const [playerOneStats, setPlayerOneStats] = useState([]);
   const [playerTwoStats, setPlayerTwoStats] = useState([]);
 
-
-  const statsOptions = {
-    method: 'GET',
-    url: 'https://api-nba-v1.p.rapidapi.com/statistics/players/playerId/',
-    headers: {
-      'x-rapidapi-key': 'ac51f32be0msh667db546ecb476ep1e1b64jsna2067267cb56',
-      'x-rapidapi-host': 'api-nba-v1.p.rapidapi.com'
-    }
-  };
-
   //filter by number of games
   const numGames = 10;
 
@@ -30,7 +20,7 @@ function App() {
   console.log(playerTwoStats)
 
   return (
-    <div className="App">
+    <div>
       <Lookup 
         setPlayer={setPlayerOne}
         setPlayerStats={setPlayerOneStats}
@@ -38,6 +28,11 @@ function App() {
       <Lookup 
         setPlayer={setPlayerTwo}
         setPlayerStats={setPlayerTwoStats}
+      />
+
+      <Averages
+        playerOneStats={playerOneStats}
+        playerTwoStats={playerTwoStats}
       />
     </div>
   );
