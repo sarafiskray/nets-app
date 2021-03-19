@@ -1,8 +1,8 @@
 import './App.css';
 import Lookup from './Lookup/Lookup.js';
 import React, { useState } from 'react';
-import { LineChart, Line } from 'recharts';
 import Averages from './Averages.js'
+import StatsChart from './StatsChart.js'
 
 function App() {
 
@@ -15,27 +15,37 @@ function App() {
   //filter by number of games
   const numGames = 10;
 
-  console.log(playerOne, playerTwo);
   console.log(playerOneStats)
-  console.log(playerTwoStats)
 
   return (
     <div className="container">
-      <div className="row">
-        <Lookup 
-          setPlayer={setPlayerOne}
-          setPlayerStats={setPlayerOneStats}
-        />
-        <Lookup 
-          setPlayer={setPlayerTwo}
-          setPlayerStats={setPlayerTwoStats}
-        />
+      <div className="row mySection">
+        <div className="col s12 m6 l6">
+          <Lookup 
+            setPlayer={setPlayerOne}
+            setPlayerStats={setPlayerOneStats}
+          />
+        </div>
+        <div className="col s12 m6 l6">
+          <Lookup 
+            setPlayer={setPlayerTwo}
+            setPlayerStats={setPlayerTwoStats}
+          />
+        </div>
       </div>
-      <div className="row">
-        <Averages
-          playerOneStats={playerOneStats}
-          playerTwoStats={playerTwoStats}
-        />
+      <div className="mySection">
+          <StatsChart 
+            playerOneStats={playerOneStats}
+            playerTwoStats={playerTwoStats}
+          />
+      </div>
+      <div className="row mySection">
+        <div className="col s12">
+          <Averages
+            playerOneStats={playerOneStats}
+            playerTwoStats={playerTwoStats}
+          />
+        </div>
       </div>
     </div>
   );

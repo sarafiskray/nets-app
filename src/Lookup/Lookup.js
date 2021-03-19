@@ -81,7 +81,7 @@ const Lookup = (props) => {
     //console.log(listPlayers)
    
     return (
-        <div className="col s12 m6 l6">
+        <Fragment>
             <Search 
                 fName = {fName}
                 lName = {lName}
@@ -93,7 +93,7 @@ const Lookup = (props) => {
             <Results 
                 listPlayers = {listPlayers}
             />
-        </div>
+        </Fragment>
     )
 }
 
