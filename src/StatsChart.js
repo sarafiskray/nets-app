@@ -39,9 +39,12 @@ const StatsChart = (props) => {
     return (
         <LineChart width={800} height = {400} data={combinedStats}>
             { playerOneStats.length > 0 ? (
-            <Line type="monotone" dataKey="p1Pts" stroke="grey" />
+            <Line type="monotone" dataKey="p1Pts" stroke="purple" />
             ) : null }
-            <XAxis />
+            { playerTwoStats.length > 0 ? (
+            <Line type="monotone" dataKey="p2Pts" stroke="green" />
+            ) : null }
+            <XAxis tick = {false} />
             <YAxis type="number" domain={[0, 80]}/>
         </LineChart>
     )
