@@ -20,13 +20,13 @@ function App() {
   return (
     <div className="container">
       <div className="row mySection">
-        <div className="col s12 m6 l6">
+        <div className="col s12 m6 l6 p1">
           <Lookup 
             setPlayer={setPlayerOne}
             setPlayerStats={setPlayerOneStats}
           />
         </div>
-        <div className="col s12 m6 l6">
+        <div className="col s12 m6 l6 p2">
           <Lookup 
             setPlayer={setPlayerTwo}
             setPlayerStats={setPlayerTwoStats}

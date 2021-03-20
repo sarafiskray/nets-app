@@ -1,5 +1,5 @@
 import React from 'react';
-import { LineChart, Line, XAxis, YAxis } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, Tooltip } from 'recharts';
 
 const StatsChart = (props) => {
 
@@ -39,13 +39,14 @@ const StatsChart = (props) => {
     return (
         <LineChart width={800} height = {400} data={combinedStats}>
             { playerOneStats.length > 0 ? (
-            <Line type="monotone" dataKey="p1Pts" stroke="purple" />
+            <Line type="monotone" dataKey="p1Pts" stroke="purple"/>
             ) : null }
             { playerTwoStats.length > 0 ? (
             <Line type="monotone" dataKey="p2Pts" stroke="green" />
             ) : null }
             <XAxis tick = {false} />
             <YAxis type="number" domain={[0, 80]}/>
+            <Tooltip cursor={false} />
         </LineChart>
     )
 }
