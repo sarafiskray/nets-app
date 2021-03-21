@@ -69,7 +69,7 @@ const Averages = (props) => {
     let playerTwoAvgs = calculateAvgs(playerTwoStats)
 
     return (
-        <table className="centered">
+        <table className="centered highlight">
             <tbody>
                 <tr>
                     <td>{ playerOneAvgs["pts"] }</td>

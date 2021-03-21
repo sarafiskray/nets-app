@@ -18,29 +18,33 @@ function App() {
   console.log(playerOneStats)
 
   return (
-    <div className="container">
-      <div className="row mySection">
-        <div className="col s12 m6 l6 p1">
-          <Lookup 
-            setPlayer={setPlayerOne}
-            setPlayerStats={setPlayerOneStats}
-          />
-        </div>
-        <div className="col s12 m6 l6 p2">
-          <Lookup 
-            setPlayer={setPlayerTwo}
-            setPlayerStats={setPlayerTwoStats}
-          />
+    <div className="grey lighten-4">
+      <div className="top grey lighten-2 z-depth-1">
+        <div className="container">
+          <div className="row mySection">
+            <div className="col s12 m6 l6 p1">
+              <Lookup 
+                setPlayer={setPlayerOne}
+                setPlayerStats={setPlayerOneStats}
+              />
+            </div>
+            <div className="col s12 m6 l6 p2">
+              <Lookup 
+                setPlayer={setPlayerTwo}
+                setPlayerStats={setPlayerTwoStats}
+              />
+            </div>
+          </div>
         </div>
       </div>
-      <div className="mySection">
+      <div className="container mySection">
           <StatsChart 
             playerOneStats={playerOneStats}
             playerTwoStats={playerTwoStats}
           />
       </div>
-      <div className="row mySection">
-        <div className="col s12">
+      <div className="container mySection">
+        <div className="card">
           <Averages
             playerOneStats={playerOneStats}
             playerTwoStats={playerTwoStats}
