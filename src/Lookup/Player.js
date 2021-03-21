@@ -29,11 +29,10 @@ const Player = (props) => {
             let recentStats = []
             let lastGame = stats.length - 1
             while (recentStats.length < 10) {
-                let x = stats[lastGame].points
-                if (x > 25) {
-                    console.log("wtf")
+                let minPlayed = parseInt(stats[lastGame].min)
+                if (minPlayed > 0) {
+                    recentStats.unshift(stats[lastGame]);
                 }
-                recentStats.unshift(stats[lastGame]);
                 lastGame -=1
             }
             setPlayerStats(recentStats)
