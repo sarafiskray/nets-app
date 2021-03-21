@@ -1,3 +1,7 @@
 .statSelected {
     border: .5px solid black;
 }
+
+.statChips {
+    margin-bottom: 15px;
+}

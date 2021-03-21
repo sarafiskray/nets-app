@@ -57,14 +57,16 @@ const StatsChart = (props) => {
 
     return (
         <Fragment>
-            <div className={ active == "points" ? "chip statSelected" : "chip"} onClick={choosePoints}>
-                Points
-            </div>
-            <div className={ active == "rebounds" ? "chip statSelected" : "chip"} onClick={chooseRebounds}>
-                Rebounds
-            </div>
-            <div className={ active == "assists" ? "chip statSelected" : "chip"} onClick={chooseAssists}>
-                Assists
+            <div className="statChips center-align">
+                <div className={ active == "points" ? "chip statSelected" : "chip"} onClick={choosePoints}>
+                    Points
+                </div>
+                <div className={ active == "rebounds" ? "chip statSelected" : "chip"} onClick={chooseRebounds}>
+                    Rebounds
+                </div>
+                <div className={ active == "assists" ? "chip statSelected" : "chip"} onClick={chooseAssists}>
+                    Assists
+                </div>
             </div>
             <LineChart width={800} height = {400} data={combinedStats}>
                 { playerOneStats.length > 0 && active == "points" ? (
