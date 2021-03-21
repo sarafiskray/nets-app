@@ -60,6 +60,18 @@ const StatsChart = (props) => {
         setNumGames(25);
     }
 
+    //edit y -axis 
+    const checkActiveStat = () => {
+        if (active == "points") {
+            return 70;
+        }
+        if (active == "rebounds") {
+            return 40;
+        }
+        if (active == "assists") {
+            return 30;
+        }
+    }
 
 
     
@@ -104,7 +116,7 @@ const StatsChart = (props) => {
                 <Line type="monotone" dataKey="p2Asts" stroke="green" />
                 ) : null }
                 <XAxis tick = {false} />
-                <YAxis type="number" domain={[0, 80]}/>
+                <YAxis type="number" domain={[0, checkActiveStat]}/>
                 <Tooltip cursor={false} />
             </LineChart>
         </Fragment>
