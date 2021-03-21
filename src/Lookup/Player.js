@@ -30,7 +30,9 @@ const Player = (props) => {
             let lastGame = stats.length - 1
             while (recentStats.length < 10) {
                 let minPlayed = parseInt(stats[lastGame].min)
-                if (minPlayed > 0) {
+                let game = parseInt(stats[lastGame].gameId)
+                //8784 is all-star game
+                if (minPlayed > 0 && game != 8784) {
                     recentStats.unshift(stats[lastGame]);
                 }
                 lastGame -=1
