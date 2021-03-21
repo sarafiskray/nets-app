@@ -6,10 +6,12 @@
 .p1 button {
     color: purple;
     height: auto;
+    margin-bottom: 10px;
     
 }
 
 .p2 button {
     color: green;
     height: auto;
+    margin-bottom: 10px;
 }

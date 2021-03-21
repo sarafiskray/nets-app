@@ -6,7 +6,7 @@ import Player from './Player.js'
 
 const Lookup = (props) => {
 
-    const {setPlayer, setPlayerStats} = props;
+    const {setPlayer, setPlayerStats, numGames} = props;
 
     const [fName, setfName] = useState('');
     const [lName, setlName] = useState('');
@@ -78,7 +78,7 @@ const Lookup = (props) => {
     else {
         listPlayers = []
     }
-    //console.log(listPlayers)
+
    
     return (
         <Fragment>
@@ -92,6 +92,7 @@ const Lookup = (props) => {
             />
             <Results 
                 listPlayers = {listPlayers}
+                numGames = {numGames}
             />
         </Fragment>
     )

@@ -7,8 +7,6 @@ const StatsChart = (props) => {
     const {playerOneStats, playerTwoStats, numGames, setNumGames } = props;
 
     const [active, setActive] = useState("points");
-
-    console.log(numGames)
   
 
     //make empty array
@@ -79,12 +77,12 @@ const StatsChart = (props) => {
                 <div className={ active == "assists" ? "chip statSelected" : "chip"} onClick={chooseAssists}>
                     Assists
                 </div>
-                <div className = { numGames == 10 ? "chip statSelected" : "chip"} onClick={choose10Games}>
+                {/* <div className = { numGames == 10 ? "chip statSelected" : "chip"} onClick={choose10Games}>
                     Last 10 Games
                 </div>
                 <div className = { numGames == 25 ? "chip statSelected" : "chip"} onClick={choose25Games}>
                     Last 25 Games
-                </div>
+                </div> */}
             </div>
             <LineChart width={800} height = {400} data={combinedStats}>
                 { playerOneStats.length > 0 && active == "points" ? (

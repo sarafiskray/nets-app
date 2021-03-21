@@ -5,7 +5,7 @@ const Results = (props) => {
     const {listPlayers} = props;
 
     return(
-        <ul>
+        <ul className="collection highlight">
             { listPlayers }
         </ul>
     )

@@ -3,7 +3,10 @@ import React from 'react';
 
 const Player = (props) => {
 
-    const { id, firstName, lastName, teamId , setPlayer, setPlayerStats} = props;
+    const { id, firstName, lastName, teamId , setPlayer, setPlayerStats, numGames} = props;
+
+    console.log(numGames)
+
 
     const statsOptions = {
         method: 'GET',
@@ -43,7 +46,7 @@ const Player = (props) => {
 
 
     return (
-        <li onClick={handleClick}>
+        <li className="collection-item" onClick={handleClick}>
             <p> {firstName} {lastName}</p>
         </li>
     )

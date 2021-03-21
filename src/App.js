@@ -22,31 +22,38 @@ function App() {
 
   return (
     <div className="grey lighten-4">
-      <div className="top grey lighten-2 z-depth-1">
+      <div className="top">
         <div className="container">
           <div className="row mySection">
             <div className="col s12 m6 l6 p1">
-              <Lookup 
-                setPlayer={setPlayerOne}
-                setPlayerStats={setPlayerOneStats}
-              />
+              <div className="card">
+                <Lookup 
+                  setPlayer={setPlayerOne}
+                  setPlayerStats={setPlayerOneStats}
+                />
+              </div>
             </div>
-            <div className="col s12 m6 l6 p2">
-              <Lookup 
-                setPlayer={setPlayerTwo}
-                setPlayerStats={setPlayerTwoStats}
-              />
+          <div className="col s12 m6 l6 p2">
+            <div className="card">
+                <Lookup 
+                  setPlayer={setPlayerTwo}
+                  setPlayerStats={setPlayerTwoStats}
+                  numGames={numGames}
+                />
+            </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="container mySection">
+      <div className="container ">
+        <div className="card">
           <StatsChart 
             playerOneStats={playerOneStats}
             playerTwoStats={playerTwoStats}
             numGames = {numGames}
             setNumGames = {setNumGames}
           />
+        </div>
       </div>
       <div className="container mySection">
         <div className="card">
