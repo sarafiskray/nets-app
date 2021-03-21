@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import './Search.css'
 
 const Search = (props) => {
 
@@ -6,23 +7,27 @@ const Search = (props) => {
     
     return (
     <Fragment>
+        <div className="col s5">
         <form onSubmit={searchfName}>
             <input
                 value={fName}
                 onChange={event => setfName(event.target.value)}
                 placeholder="First Name"
             />
-            <button className="btn grey" type="submit">Search by first name</button>
+            <button className="btn grey" type="submit">Go</button>
         </form>
-        <p className="center-align">OR</p>
+        </div>
+        <p className="col s2">OR</p>
+        <div className="col s5">
         <form onSubmit={searchlName}>
             <input
                 value={lName}
                 onChange={event => setlName(event.target.value)}
                 placeholder="Last Name"
             />
-            <button className="btn grey" type="submit">Search by last name</button>
+            <button className="btn grey" type="submit">Go</button>
         </form>
+        </div>
     </Fragment>
     )
 }

@@ -13,9 +13,12 @@ function App() {
   const [playerTwoStats, setPlayerTwoStats] = useState([]);
 
   //filter by number of games
-  const numGames = 10;
+  const [numGames, setNumGames] = useState(10);
+
 
   console.log(playerOneStats)
+  console.log(playerTwoStats)
+
 
   return (
     <div className="grey lighten-4">
@@ -41,6 +44,8 @@ function App() {
           <StatsChart 
             playerOneStats={playerOneStats}
             playerTwoStats={playerTwoStats}
+            numGames = {numGames}
+            setNumGames = {setNumGames}
           />
       </div>
       <div className="container mySection">
@@ -48,9 +53,10 @@ function App() {
           <Averages
             playerOneStats={playerOneStats}
             playerTwoStats={playerTwoStats}
+            numGames = {numGames}
           />
         </div>
-      </div>
+      </div> 
     </div>
   );
 }

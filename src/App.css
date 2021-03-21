@@ -5,8 +5,11 @@
 
 .p1 button {
     color: purple;
+    height: auto;
+    
 }
 
 .p2 button {
     color: green;
+    height: auto;
 }

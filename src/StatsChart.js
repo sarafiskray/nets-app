@@ -1,12 +1,14 @@
 import React, {Fragment, useState} from 'react';
-import { LineChart, Line, XAxis, YAxis, Tooltip } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 import './StatsChart.css'
 
 const StatsChart = (props) => {
 
-    const {playerOneStats, playerTwoStats } = props;
+    const {playerOneStats, playerTwoStats, numGames, setNumGames } = props;
 
     const [active, setActive] = useState("points");
+
+    console.log(numGames)
   
 
     //make empty array
@@ -33,7 +35,7 @@ const StatsChart = (props) => {
         }
     }
 
-    console.log(combinedStats)
+    //console.log(combinedStats)
 
     const choosePoints = (e) => {
         e.preventDefault()
@@ -48,6 +50,16 @@ const StatsChart = (props) => {
     const chooseAssists = (e) => {
         e.preventDefault()
         setActive("assists")
+    }
+
+    const choose10Games = (e) => {
+        e.preventDefault()
+        setNumGames(10);
+    }
+
+    const choose25Games = (e) => {
+        e.preventDefault()
+        setNumGames(25);
     }
 
 
@@ -66,6 +78,12 @@ const StatsChart = (props) => {
                 </div>
                 <div className={ active == "assists" ? "chip statSelected" : "chip"} onClick={chooseAssists}>
                     Assists
+                </div>
+                <div className = { numGames == 10 ? "chip statSelected" : "chip"} onClick={choose10Games}>
+                    Last 10 Games
+                </div>
+                <div className = { numGames == 25 ? "chip statSelected" : "chip"} onClick={choose25Games}>
+                    Last 25 Games
                 </div>
             </div>
             <LineChart width={800} height = {400} data={combinedStats}>
