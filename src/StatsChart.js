@@ -60,7 +60,7 @@ const StatsChart = (props) => {
         setNumGames(25);
     }
 
-    //edit y -axis 
+    //edit y -axis scale
     const checkActiveStat = () => {
         if (active == "points") {
             return 70;
@@ -73,6 +73,11 @@ const StatsChart = (props) => {
         }
     }
 
+    const CustomTooltip = () => {
+        return (
+            <div>Test</div>
+        )
+    }
 
     
     //use playerOneStats.length > 0 : jsx
@@ -117,7 +122,7 @@ const StatsChart = (props) => {
                 ) : null }
                 <XAxis tick = {false} />
                 <YAxis type="number" domain={[0, checkActiveStat]}/>
-                <Tooltip cursor={false} />
+                <Tooltip cursor={false} content={<CustomTooltip />} />
             </LineChart>
         </Fragment>
     )

@@ -71,6 +71,7 @@ const Lookup = (props) => {
                     teamId = {item.teamId}
                     setPlayer = {setPlayer}
                     setPlayerStats = {setPlayerStats}
+                    setResults = {setResults}
                 />
             )
         })  
@@ -92,7 +93,6 @@ const Lookup = (props) => {
             />
             <Results 
                 listPlayers = {listPlayers}
-                numGames = {numGames}
             />
         </Fragment>
     )

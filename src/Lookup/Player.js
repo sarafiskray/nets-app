@@ -1,11 +1,11 @@
 import axios from 'axios';
 import React from 'react';
+import './Player.css'
+
 
 const Player = (props) => {
 
-    const { id, firstName, lastName, teamId , setPlayer, setPlayerStats, numGames} = props;
-
-    console.log(numGames)
+    const { id, firstName, lastName, teamId , setPlayer, setPlayerStats, setResults} = props;
 
 
     const statsOptions = {
@@ -42,12 +42,13 @@ const Player = (props) => {
             }
             setPlayerStats(recentStats)
         })
+        setResults([])
     }
 
 
     return (
         <li className="collection-item" onClick={handleClick}>
-            <p> {firstName} {lastName}</p>
+            <p> {firstName} {lastName} </p>
         </li>
     )
 

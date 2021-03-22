@@ -26,7 +26,7 @@ function App() {
         <div className="container">
           <div className="row mySection">
             <div className="col s12 m6 l6 p1">
-              <div className="card">
+              <div className="card hoverable corners">
                 <Lookup 
                   setPlayer={setPlayerOne}
                   setPlayerStats={setPlayerOneStats}
@@ -34,7 +34,7 @@ function App() {
               </div>
             </div>
           <div className="col s12 m6 l6 p2">
-            <div className="card">
+            <div className="card hoverable corners">
                 <Lookup 
                   setPlayer={setPlayerTwo}
                   setPlayerStats={setPlayerTwoStats}
@@ -46,7 +46,7 @@ function App() {
         </div>
       </div>
       <div className="container ">
-        <div className="card">
+        <div className="card hoverable corners">
           <StatsChart 
             playerOneStats={playerOneStats}
             playerTwoStats={playerTwoStats}
@@ -56,7 +56,7 @@ function App() {
         </div>
       </div>
       <div className="container mySection">
-        <div className="card">
+        <div className="card hoverable corners">
           <Averages
             playerOneStats={playerOneStats}
             playerTwoStats={playerTwoStats}

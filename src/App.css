@@ -7,11 +7,16 @@
     color: purple;
     height: auto;
     margin-bottom: 10px;
-    
+    border-radius: 8px;
 }
 
 .p2 button {
     color: green;
     height: auto;
     margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+.corners {
+    border-radius: 8px;
 }
