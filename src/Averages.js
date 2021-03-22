@@ -2,7 +2,9 @@ import React from 'react';
 
 const Averages = (props) => {
 
-    const {playerOneStats, playerTwoStats} = props;
+    const {playerOneStats, playerTwoStats, numGames} = props;
+
+    console.log(numGames)
 
     const calculateAvgs = (stats) => {
         //think about what to return if no player is selected
@@ -33,7 +35,7 @@ const Averages = (props) => {
             let totalTpm = 0;
             let totalPlusMinus = 0
             //calculate totals
-            for (let i = 0; i < stats.length; i++) {
+            for (let i = 25 - numGames; i < stats.length; i++) {
                 totalAssists += parseInt(stats[i].assists)
                 totalBlks += parseInt(stats[i].blocks)
                 totalMin += parseInt(stats[i].min)
@@ -48,13 +50,13 @@ const Averages = (props) => {
                 totalPlusMinus += parseInt(stats[i].plusMinus)
             }
             //change to div by numGames
-            avgs['assists'] = totalAssists / 10
-            avgs['blks'] = totalBlks / 10
-            avgs['min'] = totalMin / 10
-            avgs['pts'] = totalPts / 10
-            avgs['stls'] = totalStls / 10
-            avgs['to'] = totalTo / 10
-            avgs['rebounds'] = totalRebounds / 10
+            avgs['assists'] = (totalAssists / numGames).toFixed(1)
+            avgs['blks'] = (totalBlks / numGames).toFixed(1)
+            avgs['min'] = (totalMin / numGames).toFixed(1)
+            avgs['pts'] = (totalPts / numGames).toFixed(1)
+            avgs['stls'] = (totalStls / numGames).toFixed(1)
+            avgs['to'] = (totalTo / numGames).toFixed(1)
+            avgs['rebounds'] = (totalRebounds / numGames).toFixed(1)
             avgs['fgp'] = ((totalFgm / totalFga) * 100).toFixed(1)
             avgs['tpp'] = ((totalTpm / totalTpa) * 100).toFixed(1)
             avgs['plusMinus'] = totalPlusMinus

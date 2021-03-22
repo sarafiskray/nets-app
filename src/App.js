@@ -15,6 +15,39 @@ function App() {
   //filter by number of games
   const [numGames, setNumGames] = useState(10);
 
+  const teams = {
+    1: "ATL",
+    2: "BOS",
+    4: "BKN",
+    5: "CHA",
+    6: "CHI",
+    7: "CLE",
+    8: "DAL",
+    9: "DEN",
+    10: "DET",
+    11: "GSW",
+    14: "HOU",
+    15: "IND",
+    16: "LAC",
+    17: "LAL",
+    19: "MEM",
+    20: "MIA",
+    21: "MIL",
+    22: "MIN",
+    23: "NOP",
+    24: "NYK",
+    25: "OKC",
+    26: "ORL",
+    27: "PHI",
+    28: "PHX",
+    29: "POR",
+    30: "SAC",
+    31: "SAS",
+    38: "TOR",
+    40: "UTA",
+    41: "WAS"
+  }
+
 
   console.log(playerOneStats)
   console.log(playerTwoStats)
@@ -38,7 +71,6 @@ function App() {
                 <Lookup 
                   setPlayer={setPlayerTwo}
                   setPlayerStats={setPlayerTwoStats}
-                  numGames={numGames}
                 />
             </div>
             </div>

@@ -1,4 +1,4 @@
-import React, {Fragment, useState} from 'react';
+import React, {Fragment, useState, useEffect} from 'react';
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 import './StatsChart.css'
 
@@ -9,26 +9,41 @@ const StatsChart = (props) => {
     const [active, setActive] = useState("points");
   
 
+    console.log(numGames)
     //make empty array
     let combinedStats = []
-    for (let i = 0; i < 10; i++) {
-            combinedStats.push({})
+    
+    switch(numGames) {
+        case 10:
+            for (let i = 0; i < 10; i++) {
+                    combinedStats.push({})
+            }
+            break
+        case 25:
+            for (let i = 0; i < 25; i++) {
+                combinedStats.push({})
+            }
+            break
     }
     //populate w stats
     //wont render the line if no stats
     if (playerOneStats.length > 0) {
-        for (let i = 0; i < 10; i++) {
-            combinedStats[i].p1Pts = playerOneStats[i].points;
-            combinedStats[i].p1Asts = playerOneStats[i].assists;
-            combinedStats[i].p1Reb = playerOneStats[i].totReb;
+        let x = 0;
+        for (let i = 25 - numGames; i < 25; i++) {
+            combinedStats[x].p1Pts = playerOneStats[i].points;
+            combinedStats[x].p1Asts = playerOneStats[i].assists;
+            combinedStats[x].p1Reb = playerOneStats[i].totReb;
+            x += 1;
             //can always add more
         }
     }
     if (playerTwoStats.length > 0) {
-        for (let i = 0; i < 10; i++) {
-            combinedStats[i].p2Pts = playerTwoStats[i].points;
-            combinedStats[i].p2Asts = playerTwoStats[i].assists;
-            combinedStats[i].p2Reb = playerTwoStats[i].totReb;
+        let x = 0;
+        for (let i = 25 - numGames; i < 25; i++) {
+            combinedStats[x].p2Pts = playerTwoStats[i].points;
+            combinedStats[x].p2Asts = playerTwoStats[i].assists;
+            combinedStats[x].p2Reb = playerTwoStats[i].totReb;
+            x += 1;
             //can always add more
         }
     }
@@ -94,12 +109,12 @@ const StatsChart = (props) => {
                 <div className={ active == "assists" ? "chip statSelected" : "chip"} onClick={chooseAssists}>
                     Assists
                 </div>
-                {/* <div className = { numGames == 10 ? "chip statSelected" : "chip"} onClick={choose10Games}>
+                <div className = { numGames == 10 ? "chip statSelected" : "chip"} onClick={choose10Games}>
                     Last 10 Games
                 </div>
                 <div className = { numGames == 25 ? "chip statSelected" : "chip"} onClick={choose25Games}>
                     Last 25 Games
-                </div> */}
+                </div>
             </div>
             <LineChart width={800} height = {400} data={combinedStats}>
                 { playerOneStats.length > 0 && active == "points" ? (
@@ -122,7 +137,7 @@ const StatsChart = (props) => {
                 ) : null }
                 <XAxis tick = {false} />
                 <YAxis type="number" domain={[0, checkActiveStat]}/>
-                <Tooltip cursor={false} content={<CustomTooltip />} />
+                <Tooltip cursor={false}/>
             </LineChart>
         </Fragment>
     )

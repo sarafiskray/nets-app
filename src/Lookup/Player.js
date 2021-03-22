@@ -31,7 +31,7 @@ const Player = (props) => {
         makeStatsRequest().then( (stats) => {
             let recentStats = []
             let lastGame = stats.length - 1
-            while (recentStats.length < 10) {
+            while (recentStats.length < 25) {
                 let minPlayed = parseInt(stats[lastGame].min)
                 let game = parseInt(stats[lastGame].gameId)
                 //8784 is all-star game

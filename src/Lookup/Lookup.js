@@ -6,7 +6,7 @@ import Player from './Player.js'
 
 const Lookup = (props) => {
 
-    const {setPlayer, setPlayerStats, numGames} = props;
+    const {setPlayer, setPlayerStats} = props;
 
     const [fName, setfName] = useState('');
     const [lName, setlName] = useState('');
