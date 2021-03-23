@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/nets-app/static/css/main.d79eb9d4.chunk.css",
-    "main.js": "/nets-app/static/js/main.e07f14f9.chunk.js",
-    "main.js.map": "/nets-app/static/js/main.e07f14f9.chunk.js.map",
+    "main.js": "/nets-app/static/js/main.029716d7.chunk.js",
+    "main.js.map": "/nets-app/static/js/main.029716d7.chunk.js.map",
     "runtime-main.js": "/nets-app/static/js/runtime-main.39aae290.js",
     "runtime-main.js.map": "/nets-app/static/js/runtime-main.39aae290.js.map",
     "static/js/2.acfd5951.chunk.js": "/nets-app/static/js/2.acfd5951.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.39aae290.js",
     "static/js/2.acfd5951.chunk.js",
     "static/css/main.d79eb9d4.chunk.css",
-    "static/js/main.e07f14f9.chunk.js"
+    "static/js/main.029716d7.chunk.js"
   ]
 }
