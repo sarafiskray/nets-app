@@ -1,12 +1,12 @@
 import axios from 'axios';
 import React, {Fragment, useState} from 'react';
-import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, Legend } from 'recharts';
 import './StatsChart.css'
 import CustomTooltip from './CustomTooltip.js'
 
 const StatsChart = (props) => {
 
-    const {playerOneStats, playerTwoStats, numGames, setNumGames } = props;
+    const {playerOneStats, playerTwoStats, numGames, setNumGames, playerOne, playerTwo} = props;
 
     const [active, setActive] = useState("points");
   
@@ -116,6 +116,7 @@ const StatsChart = (props) => {
         }) 
     }
 
+
     
     //use playerOneStats.length > 0 : jsx
 
@@ -139,7 +140,7 @@ const StatsChart = (props) => {
                 </div>
             </div>
             <ResponsiveContainer width="100%" height={400}>
-                <LineChart data={combinedStats} margin={{ top: 5, right: 50, bottom: 5, left: 0 }}>
+                <LineChart data={combinedStats} margin={{ top: 5, right: 50, bottom: 20, left: 0 }}>
                     { playerOneStats.length > 0 && active == "points" ? (
                     <Line type="monotone" dataKey="p1Pts" stroke="purple"/>
                     ) : null }
@@ -161,6 +162,18 @@ const StatsChart = (props) => {
                     <XAxis tick = {false} />
                     <YAxis type="number" domain={[0, checkActiveStat]}/>
                     <Tooltip cursor={false} /* content={<CustomTooltip />}  *//>
+                    <Legend align="center"
+                            //added this bc legend appeared slightly off center
+                            wrapperStyle={{left: 20}}
+                            verticalAlign="bottom" 
+                            iconType="line"
+                            payload={
+                                [
+                                { id: 'p1', value: playerOne, type: "line", color: 'purple' },
+                                { id: 'p2', value: playerTwo, type: 'line', color: 'green'}
+                                ]
+                            }
+                    ></Legend>
                 </LineChart>
             </ResponsiveContainer>
         </Fragment>

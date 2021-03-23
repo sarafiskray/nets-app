@@ -6,8 +6,8 @@ import StatsChart from './StatsChart.js'
 
 function App() {
 
-  const [playerOne, setPlayerOne] = useState(0);
-  const [playerTwo, setPlayerTwo] = useState(0);
+  const [playerOne, setPlayerOne] = useState("");
+  const [playerTwo, setPlayerTwo] = useState("");
 
   const [playerOneStats, setPlayerOneStats] = useState([]);
   const [playerTwoStats, setPlayerTwoStats] = useState([]);
@@ -52,8 +52,8 @@ function App() {
   }
 
 
-  console.log(playerOneStats)
-  console.log(playerTwoStats)
+  console.log(playerOne)
+  console.log(playerTwo)
 
 
   return (
@@ -89,6 +89,9 @@ function App() {
             playerTwoStats={playerTwoStats}
             numGames = {numGames}
             setNumGames = {setNumGames}
+            //for legend
+            playerOne={playerOne}
+            playerTwo={playerTwo}
           />
         </div>
       </div>

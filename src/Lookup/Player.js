@@ -27,7 +27,7 @@ const Player = (props) => {
 
     const handleClick = (event) => {
         event.preventDefault()
-        setPlayer(id)
+        setPlayer(firstName + " " + lastName)
         makeStatsRequest().then( (stats) => {
             let recentStats = []
             let lastGame = stats.length - 1
