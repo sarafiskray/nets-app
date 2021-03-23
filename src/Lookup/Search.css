@@ -6,3 +6,19 @@
 .searches input {
     text-overflow: ellipsis;
 }
+
+.btn.waves-effect.waves-green:hover {
+    background-color: #c8e6c9;
+}
+
+.btn.waves-effect.waves-green {
+    background-color: #bdbdbd;
+}
+
+.btn.waves-effect.waves-purple {
+    background-color: #bdbdbd;
+}
+
+.btn.waves-effect.waves-purple:hover {
+    background-color: #e1bee7;
+}
