@@ -117,29 +117,31 @@ const StatsChart = (props) => {
                     Last 25 Games
                 </div>
             </div>
-            <LineChart width={800} height = {400} data={combinedStats}>
-                { playerOneStats.length > 0 && active == "points" ? (
-                <Line type="monotone" dataKey="p1Pts" stroke="purple"/>
-                ) : null }
-                { playerTwoStats.length > 0 && active == "points" ? (
-                <Line type="monotone" dataKey="p2Pts" stroke="green" />
-                ) : null }
-                { playerOneStats.length > 0 && active == "rebounds" ? (
-                <Line type="monotone" dataKey="p1Reb" stroke="purple"/>
-                ) : null }
-                { playerTwoStats.length > 0 && active == "rebounds" ? (
-                <Line type="monotone" dataKey="p2Reb" stroke="green" />
-                ) : null }
-                { playerOneStats.length > 0 && active == "assists" ? (
-                <Line type="monotone" dataKey="p1Asts" stroke="purple"/>
-                ) : null }
-                { playerTwoStats.length > 0 && active == "assists" ? (
-                <Line type="monotone" dataKey="p2Asts" stroke="green" />
-                ) : null }
-                <XAxis tick = {false} />
-                <YAxis type="number" domain={[0, checkActiveStat]}/>
-                <Tooltip cursor={false}/>
-            </LineChart>
+            <ResponsiveContainer width="100%" height={400}>
+                <LineChart data={combinedStats} margin={{ top: 5, right: 50, bottom: 5, left: 0 }}>
+                    { playerOneStats.length > 0 && active == "points" ? (
+                    <Line type="monotone" dataKey="p1Pts" stroke="purple"/>
+                    ) : null }
+                    { playerTwoStats.length > 0 && active == "points" ? (
+                    <Line type="monotone" dataKey="p2Pts" stroke="green" />
+                    ) : null }
+                    { playerOneStats.length > 0 && active == "rebounds" ? (
+                    <Line type="monotone" dataKey="p1Reb" stroke="purple"/>
+                    ) : null }
+                    { playerTwoStats.length > 0 && active == "rebounds" ? (
+                    <Line type="monotone" dataKey="p2Reb" stroke="green" />
+                    ) : null }
+                    { playerOneStats.length > 0 && active == "assists" ? (
+                    <Line type="monotone" dataKey="p1Asts" stroke="purple"/>
+                    ) : null }
+                    { playerTwoStats.length > 0 && active == "assists" ? (
+                    <Line type="monotone" dataKey="p2Asts" stroke="green" />
+                    ) : null }
+                    <XAxis tick = {false} />
+                    <YAxis type="number" domain={[0, checkActiveStat]}/>
+                    <Tooltip cursor={false}/>
+                </LineChart>
+            </ResponsiveContainer>
         </Fragment>
     )
 }
