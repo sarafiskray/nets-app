@@ -15,6 +15,9 @@ function App() {
   //filter by number of games
   const [numGames, setNumGames] = useState(10);
 
+  const color1 = "purple";
+  const color2 = "green"
+
   const teams = {
     1: "ATL",
     2: "BOS",
@@ -63,6 +66,7 @@ function App() {
                 <Lookup 
                   setPlayer={setPlayerOne}
                   setPlayerStats={setPlayerOneStats}
+                  color={color1}
                 />
               </div>
             </div>
@@ -71,6 +75,7 @@ function App() {
                 <Lookup 
                   setPlayer={setPlayerTwo}
                   setPlayerStats={setPlayerTwoStats}
+                  color={color2}
                 />
             </div>
             </div>

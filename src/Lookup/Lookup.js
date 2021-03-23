@@ -6,7 +6,7 @@ import Player from './Player.js'
 
 const Lookup = (props) => {
 
-    const {setPlayer, setPlayerStats} = props;
+    const {setPlayer, setPlayerStats, color} = props;
 
     const [fName, setfName] = useState('');
     const [lName, setlName] = useState('');
@@ -90,6 +90,7 @@ const Lookup = (props) => {
                 setlName = {setlName}
                 searchlName = {searchlName}
                 searchfName = {searchfName}
+                color = {color}
             />
             <Results 
                 listPlayers = {listPlayers}
