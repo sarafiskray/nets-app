@@ -34,6 +34,7 @@ const StatsChart = (props) => {
             combinedStats[x].p1Pts = playerOneStats[i].points;
             combinedStats[x].p1Asts = playerOneStats[i].assists;
             combinedStats[x].p1Reb = playerOneStats[i].totReb;
+            combinedStats[x].p1GameId = playerOneStats[i].gameId;
             x += 1;
             //can always add more
         }
@@ -44,12 +45,13 @@ const StatsChart = (props) => {
             combinedStats[x].p2Pts = playerTwoStats[i].points;
             combinedStats[x].p2Asts = playerTwoStats[i].assists;
             combinedStats[x].p2Reb = playerTwoStats[i].totReb;
+            combinedStats[x].p2GameId = playerTwoStats[i].gameId;
             x += 1;
             //can always add more
         }
     }
 
-    //console.log(combinedStats)
+    console.log(combinedStats)
 
     const choosePoints = (e) => {
         e.preventDefault()
@@ -88,6 +90,11 @@ const StatsChart = (props) => {
             return 30;
         }
     }
+
+    const getGameData = () => {
+
+    }
+
 
     const CustomTooltip = () => {
         return (
