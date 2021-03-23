@@ -2,7 +2,6 @@ import axios from 'axios';
 import React, {Fragment, useState} from 'react';
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, Legend } from 'recharts';
 import './StatsChart.css'
-import CustomTooltip from './CustomTooltip.js'
 
 const StatsChart = (props) => {
 
@@ -11,8 +10,8 @@ const StatsChart = (props) => {
     const [active, setActive] = useState("points");
   
 
-    //console.log(numGames)
-    //make empty array
+    
+    //make array to hold stats for chart
     let combinedStats = []
     
     switch(numGames) {
@@ -38,7 +37,8 @@ const StatsChart = (props) => {
             combinedStats[x].p1Reb = playerOneStats[i].totReb;
             combinedStats[x].p1GameId = playerOneStats[i].gameId;
             x += 1;
-            //can always add more
+            //any other stats that you want a visualization of
+            //can be added here
         }
     }
     if (playerTwoStats.length > 0) {
@@ -49,7 +49,8 @@ const StatsChart = (props) => {
             combinedStats[x].p2Reb = playerTwoStats[i].totReb;
             combinedStats[x].p2GameId = playerTwoStats[i].gameId;
             x += 1;
-            //can always add more
+            //any other stats that you want a visualization of
+            //can be added here
         }
     }
 
@@ -80,7 +81,7 @@ const StatsChart = (props) => {
         setNumGames(25);
     }
 
-    //edit y -axis scale
+    //edit y -axis scale based on chosen stat
     const checkActiveStat = () => {
         if (active == "points") {
             return 70;
@@ -93,6 +94,7 @@ const StatsChart = (props) => {
         }
     }
 
+    //headers for request by game, currently this request isnt being made
     const gameOptions = {
         method: 'GET',
         url: 'https://api-nba-v1.p.rapidapi.com/games/gameId/',
@@ -102,7 +104,7 @@ const StatsChart = (props) => {
         }
       };
 
-    //for custom tooltip
+    //made this function to display game date and teams played on hover of chart
     const getGameData = (game) => {
         gameOptions['url'] += game;
         axios.request(gameOptions)
@@ -116,9 +118,6 @@ const StatsChart = (props) => {
         }) 
     }
 
-
-    
-    //use playerOneStats.length > 0 : jsx
 
     return (
         <Fragment>

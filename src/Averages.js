@@ -8,8 +8,7 @@ const Averages = (props) => {
     console.log(numGames)
 
     const calculateAvgs = (stats) => {
-        //think about what to return if no player is selected
-        //empty object or object with all stats set to zero
+        //avgs object with stats set to 0
         let avgs = {
             assists: 0,
             blks: 0,
@@ -22,6 +21,7 @@ const Averages = (props) => {
             tpp: 0,
             plusMinus: 0
         }
+        // if stats, sum totals and calculate averages
         if (stats.length > 0) {
             let totalAssists = 0;
             let totalBlks = 0;
@@ -50,10 +50,10 @@ const Averages = (props) => {
                 totalTpm += parseInt(stats[i].tpm)
                 totalPlusMinus += parseInt(stats[i].plusMinus)
             }
-            //change to div by numGames
+            //average
             avgs['assists'] = (totalAssists / numGames).toFixed(1)
             avgs['blks'] = (totalBlks / numGames).toFixed(1)
-            avgs['min'] = (totalMin / numGames).toFixed(1)
+            avgs['min'] = (totalMin / numGames).toFixed(0)
             avgs['pts'] = (totalPts / numGames).toFixed(1)
             avgs['stls'] = (totalStls / numGames).toFixed(1)
             avgs['to'] = (totalTo / numGames).toFixed(1)

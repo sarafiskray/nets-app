@@ -8,6 +8,41 @@ const Player = (props) => {
     const { id, firstName, lastName, teamId , setPlayer, setPlayerStats, setResults} = props;
 
 
+    //use to show team in search results
+    const teams = {
+        1: "ATL",
+        2: "BOS",
+        4: "BKN",
+        5: "CHA",
+        6: "CHI",
+        7: "CLE",
+        8: "DAL",
+        9: "DEN",
+        10: "DET",
+        11: "GSW",
+        14: "HOU",
+        15: "IND",
+        16: "LAC",
+        17: "LAL",
+        19: "MEM",
+        20: "MIA",
+        21: "MIL",
+        22: "MIN",
+        23: "NOP",
+        24: "NYK",
+        25: "OKC",
+        26: "ORL",
+        27: "PHI",
+        28: "PHX",
+        29: "POR",
+        30: "SAC",
+        31: "SAS",
+        38: "TOR",
+        40: "UTA",
+        41: "WAS"
+    }
+
+
     const statsOptions = {
         method: 'GET',
         url: 'https://api-nba-v1.p.rapidapi.com/statistics/players/playerId/',
@@ -17,6 +52,7 @@ const Player = (props) => {
         }
       };
 
+    //make stats request, return promise
     const makeStatsRequest = () => {
         statsOptions['url'] += id
         const promise = axios.request(statsOptions)
@@ -25,6 +61,8 @@ const Player = (props) => {
         return stats;
     }
 
+    //on player select, set player and get recent stats
+    //filtering out games in which they did not play
     const handleClick = (event) => {
         event.preventDefault()
         setPlayer(firstName + " " + lastName)
@@ -42,6 +80,7 @@ const Player = (props) => {
             }
             setPlayerStats(recentStats)
         })
+        //clear results
         setResults([])
     }
 

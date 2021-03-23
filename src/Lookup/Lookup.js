@@ -31,6 +31,7 @@ const Lookup = (props) => {
         }
       };
 
+    //make request by first name
     const searchfName = event => {
         event.preventDefault();
 
@@ -46,6 +47,7 @@ const Lookup = (props) => {
 
     }
 
+    //make request by last name
     const searchlName = event => {
         event.preventDefault()
         
@@ -59,6 +61,7 @@ const Lookup = (props) => {
         })
     } 
 
+    //convert search results to array of Players
     let listPlayers
     if (results.length > 0) {
         listPlayers = results.map ( item => {
