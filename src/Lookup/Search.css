@@ -1,0 +1,8 @@
+.searches {
+    padding: 10px;
+    
+}
+
+.searches input {
+    text-overflow: ellipsis;
+}

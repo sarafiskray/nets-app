@@ -1,6 +1,8 @@
+import axios from 'axios';
 import React, {Fragment, useState} from 'react';
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 import './StatsChart.css'
+import CustomTooltip from './CustomTooltip.js'
 
 const StatsChart = (props) => {
 
@@ -9,7 +11,7 @@ const StatsChart = (props) => {
     const [active, setActive] = useState("points");
   
 
-    console.log(numGames)
+    //console.log(numGames)
     //make empty array
     let combinedStats = []
     
@@ -91,15 +93,27 @@ const StatsChart = (props) => {
         }
     }
 
-    const getGameData = () => {
+    const gameOptions = {
+        method: 'GET',
+        url: 'https://api-nba-v1.p.rapidapi.com/games/gameId/',
+        headers: {
+          'x-rapidapi-key': 'ac51f32be0msh667db546ecb476ep1e1b64jsna2067267cb56',
+          'x-rapidapi-host': 'api-nba-v1.p.rapidapi.com'
+        }
+      };
 
-    }
-
-
-    const CustomTooltip = () => {
-        return (
-            <div>Test</div>
-        )
+    //for custom tooltip
+    const getGameData = (game) => {
+        gameOptions['url'] += game;
+        axios.request(gameOptions)
+        .then( (resp) => {
+            let gameData = resp.data.api.games[0]
+            let gameDate = gameData.startTimeUTC.slice(0, 10) 
+            let homeTeam = gameData.hTeam.shortName
+            let awayTeam = gameData.vTeam.shortName
+            console.log([gameDate, homeTeam, awayTeam])
+            return [gameDate, homeTeam, awayTeam]
+        }) 
     }
 
     
@@ -146,7 +160,7 @@ const StatsChart = (props) => {
                     ) : null }
                     <XAxis tick = {false} />
                     <YAxis type="number" domain={[0, checkActiveStat]}/>
-                    <Tooltip cursor={false}/>
+                    <Tooltip cursor={false} /* content={<CustomTooltip />}  *//>
                 </LineChart>
             </ResponsiveContainer>
         </Fragment>

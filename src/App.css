@@ -8,6 +8,7 @@
     height: auto;
     margin-bottom: 10px;
     border-radius: 8px;
+    width: 100%;
 }
 
 .p2 button {
@@ -15,6 +16,7 @@
     height: auto;
     margin-bottom: 10px;
     border-radius: 8px;
+    width: 100%;
 }
 
 .corners {
