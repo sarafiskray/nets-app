@@ -161,19 +161,26 @@ const StatsChart = (props) => {
                     ) : null }
                     <XAxis tick = {false} />
                     <YAxis type="number" domain={[0, checkActiveStat]}/>
-                    <Tooltip cursor={false} /* content={<CustomTooltip />}  *//>
-                    <Legend align="center"
-                            //added this bc legend appeared slightly off center
-                            wrapperStyle={{left: 20}}
-                            verticalAlign="bottom" 
-                            iconType="line"
-                            payload={
-                                [
-                                { id: 'p1', value: playerOne, type: "line", color: 'purple' },
-                                { id: 'p2', value: playerTwo, type: 'line', color: 'green'}
-                                ]
-                            }
-                    ></Legend>
+                    <Tooltip 
+                        cursor={false} 
+                        labelFormatter = { (label) => ""}
+                        formatter= { (name, value) => [name, active] }
+                        //content = { <CustomTooltip />}
+                        
+                    />
+                    <Legend 
+                        align="center"
+                        //added this bc legend appeared slightly off center
+                        wrapperStyle={{left: 30}}
+                        verticalAlign="bottom" 
+                        iconType="line"
+                        payload={
+                            [
+                            { id: 'p1', value: playerOne, type: "line", color: 'purple' },
+                            { id: 'p2', value: playerTwo, type: 'line', color: 'green'}
+                            ]
+                        }
+                    />
                 </LineChart>
             </ResponsiveContainer>
         </Fragment>
