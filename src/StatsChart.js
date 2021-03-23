@@ -1,4 +1,4 @@
-import React, {Fragment, useState, useEffect} from 'react';
+import React, {Fragment, useState} from 'react';
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 import './StatsChart.css'
 
@@ -24,6 +24,7 @@ const StatsChart = (props) => {
                 combinedStats.push({})
             }
             break
+        //no default 
     }
     //populate w stats
     //wont render the line if no stats
