@@ -1,4 +1,5 @@
 import React from 'react';
+import './Averages.css'
 
 const Averages = (props) => {
 
@@ -74,54 +75,54 @@ const Averages = (props) => {
         <table className="centered highlight">
             <tbody>
                 <tr>
-                    <td>{ playerOneAvgs["pts"] }</td>
+                    <td className="pl1">{ playerOneAvgs["pts"] }</td>
                     <td>PPG</td>
-                    <td>{ playerTwoAvgs["pts"] }</td>
+                    <td className="pl2">{ playerTwoAvgs["pts"] }</td>
                 </tr>
                 <tr>
-                    <td>{ playerOneAvgs["rebounds"] }</td>
+                    <td className="pl1">{ playerOneAvgs["rebounds"] }</td>
                     <td>RPG</td>
-                    <td>{ playerTwoAvgs["rebounds"] }</td>
+                    <td className="pl2">{ playerTwoAvgs["rebounds"] }</td>
                 </tr>
                 <tr>
-                    <td>{ playerOneAvgs["assists"] }</td>
+                    <td className="pl1">{ playerOneAvgs["assists"] }</td>
                     <td>APG</td>
-                    <td>{ playerTwoAvgs["assists"] }</td>
+                    <td className="pl2">{ playerTwoAvgs["assists"] }</td>
                 </tr>
                 <tr>
-                    <td>{ playerOneAvgs["stls"] }</td>
+                    <td className="pl1">{ playerOneAvgs["stls"] }</td>
                     <td>SPG</td>
-                    <td>{ playerTwoAvgs["stls"] }</td>
+                    <td className="pl2">{ playerTwoAvgs["stls"] }</td>
                 </tr>
                 <tr>
-                    <td>{ playerOneAvgs["blks"] }</td>
+                    <td className="pl1">{ playerOneAvgs["blks"] }</td>
                     <td>BPG</td>
-                    <td>{ playerTwoAvgs["blks"] }</td>
+                    <td className="pl2">{ playerTwoAvgs["blks"] }</td>
                 </tr>
                 <tr>
-                    <td>{ playerOneAvgs["to"] }</td>
+                    <td className="pl1">{ playerOneAvgs["to"] }</td>
                     <td>TOPG</td>
-                    <td>{ playerTwoAvgs["to"] }</td>
+                    <td className="pl2">{ playerTwoAvgs["to"] }</td>
                 </tr>
                 <tr>
-                    <td>{ playerOneAvgs["min"] }</td>
+                    <td className="pl1">{ playerOneAvgs["min"] }</td>
                     <td>MPG</td>
-                    <td>{ playerTwoAvgs["min"] }</td>
+                    <td className="pl2">{ playerTwoAvgs["min"] }</td>
                 </tr>
                 <tr>
-                    <td>{ playerOneAvgs["fgp"] }</td>
+                    <td className="pl1">{ playerOneAvgs["fgp"] }</td>
                     <td>FG %</td>
-                    <td>{ playerTwoAvgs["fgp"] }</td>
+                    <td className="pl2">{ playerTwoAvgs["fgp"] }</td>
                 </tr>
                 <tr>
-                    <td>{ playerOneAvgs["tpp"] }</td>
+                    <td className="pl1">{ playerOneAvgs["tpp"] }</td>
                     <td>3P %</td>
-                    <td>{ playerTwoAvgs["tpp"] }</td>
+                    <td className="pl2">{ playerTwoAvgs["tpp"] }</td>
                 </tr>
                 <tr>
-                    <td>{ playerOneAvgs["plusMinus"] }</td>
+                    <td className="pl1">{ playerOneAvgs["plusMinus"] }</td>
                     <td>Total +/-</td>
-                    <td>{ playerTwoAvgs["plusMinus"] }</td>
+                    <td className="pl2">{ playerTwoAvgs["plusMinus"] }</td>
                 </tr>
             </tbody>
         </table>

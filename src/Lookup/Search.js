@@ -14,7 +14,7 @@ const Search = (props) => {
                 onChange={event => setfName(event.target.value)}
                 placeholder="First Name"
             />
-            <button className={ color == "purple" ? "btn grey waves-effect waves-purple" : "btn grey waves-effect waves-green" } type="submit">Go</button>
+            <button className={ color == "purple" ? "btn grey lighten-1 waves-effect waves-purple" : "btn grey lighten-1 waves-effect waves-green" } type="submit">Go</button>
         </form>
         </div>
         <p className="col s2 center-align">OR</p>
@@ -25,7 +25,7 @@ const Search = (props) => {
                 onChange={event => setlName(event.target.value)}
                 placeholder="Last Name"
             />
-            <button className={ color == "purple" ? "btn grey waves-effect waves-purple" : "btn grey waves-effect waves-green" } type="submit">Go</button>
+            <button className={ color == "purple" ? "btn grey lighten-1 waves-effect waves-purple" : "btn grey lighten-1 waves-effect waves-green" } type="submit">Go</button>
         </form>
         </div>
     </div>
