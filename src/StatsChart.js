@@ -122,19 +122,19 @@ const StatsChart = (props) => {
     return (
         <Fragment>
             <div className="statChips center-align">
-                <div className={ active == "points" ? "chip statSelected" : "chip"} onClick={choosePoints}>
+                <div className={ active == "points" ? "chip statSelected" : "chip notSelected"} onClick={choosePoints}>
                     Points
                 </div>
-                <div className={ active == "rebounds" ? "chip statSelected" : "chip"} onClick={chooseRebounds}>
+                <div className={ active == "rebounds" ? "chip statSelected" : "chip notSelected"} onClick={chooseRebounds}>
                     Rebounds
                 </div>
-                <div className={ active == "assists" ? "chip statSelected" : "chip"} onClick={chooseAssists}>
+                <div className={ active == "assists" ? "chip statSelected" : "chip notSelected"} onClick={chooseAssists}>
                     Assists
                 </div>
-                <div className = { numGames == 10 ? "chip statSelected" : "chip"} onClick={choose10Games}>
+                <div className = { numGames == 10 ? "chip statSelected" : "chip notSelected"} onClick={choose10Games}>
                     Last 10 Games
                 </div>
-                <div className = { numGames == 25 ? "chip statSelected" : "chip"} onClick={choose25Games}>
+                <div className = { numGames == 25 ? "chip statSelected" : "chip notSelected"} onClick={choose25Games}>
                     Last 25 Games
                 </div>
             </div>

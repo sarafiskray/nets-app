@@ -17,7 +17,11 @@ const Averages = (props) => {
             stls: 0,
             to: 0,
             rebounds: 0,
+            totFgm: 0,
+            totFga: 0,
             fgp: 0,
+            totTpm: 0,
+            totTpa: 0,
             tpp: 0,
             plusMinus: 0
         }
@@ -58,7 +62,11 @@ const Averages = (props) => {
             avgs['stls'] = (totalStls / numGames).toFixed(1)
             avgs['to'] = (totalTo / numGames).toFixed(1)
             avgs['rebounds'] = (totalRebounds / numGames).toFixed(1)
+            avgs['totFgm'] = totalFgm
+            avgs['totFga'] = totalFga
             avgs['fgp'] = ((totalFgm / totalFga) * 100).toFixed(1)
+            avgs['totTpm'] = totalTpm
+            avgs['totTpa'] = totalTpa
             avgs['tpp'] = ((totalTpm / totalTpa) * 100).toFixed(1)
             avgs['plusMinus'] = totalPlusMinus
             return avgs
@@ -109,11 +117,34 @@ const Averages = (props) => {
                     <td>MPG</td>
                     <td className="pl2">{ playerTwoAvgs["min"] }</td>
                 </tr>
+               {/* decided against including total shots made and attempted
+                <tr>
+                    <td className="pl1">{ playerOneAvgs["totFgm"] }</td>
+                    <td>FG Made</td>
+                    <td className="pl2">{ playerTwoAvgs["totFgm"] }</td>
+                </tr>
+                <tr>
+                    <td className="pl1">{ playerOneAvgs["totFga"] }</td>
+                    <td>FG Attempted</td>
+                    <td className="pl2">{ playerTwoAvgs["totFga"] }</td>
+                </tr> */}
                 <tr>
                     <td className="pl1">{ playerOneAvgs["fgp"] }</td>
                     <td>FG %</td>
                     <td className="pl2">{ playerTwoAvgs["fgp"] }</td>
                 </tr>
+                {
+                /* decided against including total shots made and attempted
+                <tr>
+                    <td className="pl1">{ playerOneAvgs["totTpm"] }</td>
+                    <td>3P Made</td>
+                    <td className="pl2">{ playerTwoAvgs["totTpm"] }</td>
+                </tr>
+                <tr>
+                    <td className="pl1">{ playerOneAvgs["totTpa"] }</td>
+                    <td>3P Attempted</td>
+                    <td className="pl2">{ playerTwoAvgs["totTpa"] }</td>
+                </tr> */}
                 <tr>
                     <td className="pl1">{ playerOneAvgs["tpp"] }</td>
                     <td>3P %</td>
