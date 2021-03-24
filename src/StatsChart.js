@@ -41,6 +41,7 @@ const StatsChart = (props) => {
             combinedStats[x].p1Asts = playerOneStats[i].assists;
             combinedStats[x].p1Reb = playerOneStats[i].totReb;
             combinedStats[x].p1GameId = playerOneStats[i].gameId;
+            combinedStats[x].p1Tpm = playerOneStats[i].tpm;
             x += 1;
             //any other stats that you want a visualization of
             //can be added here
@@ -53,6 +54,7 @@ const StatsChart = (props) => {
             combinedStats[x].p2Asts = playerTwoStats[i].assists;
             combinedStats[x].p2Reb = playerTwoStats[i].totReb;
             combinedStats[x].p2GameId = playerTwoStats[i].gameId;
+            combinedStats[x].p2Tpm = playerTwoStats[i].tpm;
             x += 1;
             //any other stats that you want a visualization of
             //can be added here
@@ -74,6 +76,11 @@ const StatsChart = (props) => {
     const chooseAssists = (e) => {
         e.preventDefault()
         setActive("assists")
+    }
+
+    const chooseTpm = (e) => {
+        e.preventDefault()
+        setActive("3PM")
     }
 
     const choose5Games = (e) => {
@@ -101,6 +108,9 @@ const StatsChart = (props) => {
         }
         if (active == "assists") {
             return 30;
+        }
+        if (active == "3PM") {
+            return 15;
         }
     }
 
@@ -141,6 +151,9 @@ const StatsChart = (props) => {
                 <div className={ active == "assists" ? "chip statSelected" : "chip notSelected"} onClick={chooseAssists}>
                     Assists
                 </div>
+                <div className={ active == "3PM" ? "chip statSelected" : "chip notSelected"} onClick={chooseTpm}>
+                    3P Made
+                </div>
                 <div className = { numGames == 5 ? "chip statSelected" : "chip notSelected"} onClick={choose5Games}>
                     Last 5 Games
                 </div>
@@ -170,6 +183,12 @@ const StatsChart = (props) => {
                     ) : null }
                     { playerTwoStats.length > 0 && active == "assists" ? (
                     <Line type="monotone" dataKey="p2Asts" stroke="green" />
+                    ) : null }
+                    { playerOneStats.length > 0 && active == "3PM" ? (
+                    <Line type="monotone" dataKey="p1Tpm" stroke="purple"/>
+                    ) : null }
+                    { playerTwoStats.length > 0 && active == "3PM" ? (
+                    <Line type="monotone" dataKey="p2Tpm" stroke="green" />
                     ) : null }
                     <XAxis tick = {false} />
                     <YAxis type="number" domain={[0, checkActiveStat]}/>
