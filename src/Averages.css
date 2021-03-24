@@ -5,3 +5,7 @@
 .pl2 {
     color: green !important;
 }
+
+table tbody tr td {
+    width: 33%
+}
