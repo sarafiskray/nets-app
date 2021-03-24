@@ -19,6 +19,16 @@
     width: 100%;
 }
 
+.p1 input:focus {
+    border-bottom: 1px solid purple !important;
+    box-shadow: 0 1px 0 0 purple !important;
+}
+
+.p2 input:focus {
+    border-bottom: 1px solid green !important;
+    box-shadow: 0 1px 0 0 green !important;
+}
+
 .corners {
     border-radius: 8px;
 }
