@@ -13,7 +13,7 @@ function App() {
   const [playerTwoStats, setPlayerTwoStats] = useState([]);
 
   //filter by number of games
-  const [numGames, setNumGames] = useState(10);
+  const [numGames, setNumGames] = useState(5);
 
   const color1 = "purple";
   const color2 = "green"

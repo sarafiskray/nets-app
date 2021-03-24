@@ -15,6 +15,11 @@ const StatsChart = (props) => {
     let combinedStats = []
     
     switch(numGames) {
+        case 5:
+            for (let i = 0; i < 5; i++) {
+                    combinedStats.push({})
+            }
+            break
         case 10:
             for (let i = 0; i < 10; i++) {
                     combinedStats.push({})
@@ -69,6 +74,11 @@ const StatsChart = (props) => {
     const chooseAssists = (e) => {
         e.preventDefault()
         setActive("assists")
+    }
+
+    const choose5Games = (e) => {
+        e.preventDefault()
+        setNumGames(5);
     }
 
     const choose10Games = (e) => {
@@ -130,6 +140,9 @@ const StatsChart = (props) => {
                 </div>
                 <div className={ active == "assists" ? "chip statSelected" : "chip notSelected"} onClick={chooseAssists}>
                     Assists
+                </div>
+                <div className = { numGames == 5 ? "chip statSelected" : "chip notSelected"} onClick={choose5Games}>
+                    Last 5 Games
                 </div>
                 <div className = { numGames == 10 ? "chip statSelected" : "chip notSelected"} onClick={choose10Games}>
                     Last 10 Games
