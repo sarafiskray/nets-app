@@ -1,4 +1,5 @@
 import React , { Fragment } from 'react';
+import './Results.css'
 
 const Results = (props) => {
 

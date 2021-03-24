@@ -84,10 +84,24 @@ const Player = (props) => {
         setResults([])
     }
 
+    //get team short name, to display in search results
+    const teamShortName = (team) => {
+        if (team in teams) {
+            return teams[team];
+        }
+        else {
+            return "n/a";
+        }
+    }
+
 
     return (
         <li className="collection-item" onClick={handleClick}>
-            <p> {firstName} {lastName} </p>
+            <p> {firstName} {lastName} 
+            {/* uncomment this to show team name in search results
+            some players are in the database who are no longer in the NBA */}
+            <span className="secondary-content"> { teamShortName(teamId) } </span> 
+            </p>
         </li>
     )
 

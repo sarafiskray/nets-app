@@ -1,9 +1,12 @@
 .collection-item {
     line-height: 0 !important;
-    padding: 2px 10px !important;
+    padding: 2px 15px !important;
     cursor: pointer;
 }
 
+.collection-item span {
+    color: black;
+}
 li.collection-item:hover {
     background-color: #eeeeee;
 }
