@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/nets-app/static/css/main.20c1fbca.chunk.css",
+    "main.css": "/nets-app/static/css/main.96ca665e.chunk.css",
     "main.js": "/nets-app/static/js/main.9791ca66.chunk.js",
     "main.js.map": "/nets-app/static/js/main.9791ca66.chunk.js.map",
     "runtime-main.js": "/nets-app/static/js/runtime-main.df86ce1c.js",
@@ -10,13 +10,13 @@
     "static/js/3.3768322e.chunk.js": "/nets-app/static/js/3.3768322e.chunk.js",
     "static/js/3.3768322e.chunk.js.map": "/nets-app/static/js/3.3768322e.chunk.js.map",
     "index.html": "/nets-app/index.html",
-    "static/css/main.20c1fbca.chunk.css.map": "/nets-app/static/css/main.20c1fbca.chunk.css.map",
+    "static/css/main.96ca665e.chunk.css.map": "/nets-app/static/css/main.96ca665e.chunk.css.map",
     "static/js/2.d3c7ea33.chunk.js.LICENSE.txt": "/nets-app/static/js/2.d3c7ea33.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.df86ce1c.js",
     "static/js/2.d3c7ea33.chunk.js",
-    "static/css/main.20c1fbca.chunk.css",
+    "static/css/main.96ca665e.chunk.css",
     "static/js/main.9791ca66.chunk.js"
   ]
 }
