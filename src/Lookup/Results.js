@@ -3,13 +3,18 @@ import './Results.css'
 
 const Results = (props) => {
 
-    const {listPlayers} = props;
+    const {listPlayers, searched} = props;
 
     return (
         <Fragment>
             <p className="center-align">Enter full first or last name</p>
             <ul className="collection">
                 { listPlayers }
+                { searched && listPlayers.length == 0 ? (
+                    <li className="collection-item noResults">
+                        <p>No results found</p>
+                    </li> ) : null
+                }
             </ul>
         </Fragment>
     )

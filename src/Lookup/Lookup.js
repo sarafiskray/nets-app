@@ -13,6 +13,8 @@ const Lookup = (props) => {
 
     const [results, setResults] = useState([]);
 
+    const [searched, setSearched] = useState(false);
+
     let fNameOptions = {
         method: 'GET',
         url: 'https://api-nba-v1.p.rapidapi.com/players/firstName/',
@@ -39,6 +41,7 @@ const Lookup = (props) => {
         axios.request(fNameOptions)
         .then ( resp => {
             setResults(resp.data.api.players)
+            setSearched(true)
             
         })
         .catch ( err => {
@@ -55,11 +58,14 @@ const Lookup = (props) => {
         axios.request(lNameOptions)
         .then ( resp => {
             setResults(resp.data.api.players)
+            setSearched(true)
         })
         .catch ( err => {
             console.log(err)
         })
     } 
+
+    //console.log(searched)
 
     //convert search results to array of Players
     let listPlayers
@@ -97,6 +103,7 @@ const Lookup = (props) => {
             />
             <Results 
                 listPlayers = {listPlayers}
+                searched = {searched}
             />
         </Fragment>
     )

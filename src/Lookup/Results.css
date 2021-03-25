@@ -1,3 +1,8 @@
 .collection {
     border-radius: 8px;
 }
+
+.noResults:hover {
+    background-color: white !important;
+    cursor: default;
+}
