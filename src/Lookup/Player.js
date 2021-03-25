@@ -78,9 +78,11 @@ const Player = (props) => {
                     recentStats.unshift(stats[lastGame]);
                 }
                 lastGame -=1
+                //less than 25 career games played
                 if (lastGame < 0) {
                     enoughGames = false
                     setPlayerStats([])
+                    setPlayer(firstName + " " + lastName + " (not qualified, min 25 games)")
                     break
                 }
             }
