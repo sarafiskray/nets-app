@@ -69,6 +69,7 @@ const Player = (props) => {
         makeStatsRequest().then( (stats) => {
             let recentStats = []
             let lastGame = stats.length - 1
+            let enoughGames = true
             while (recentStats.length < 25) {
                 let minPlayed = parseInt(stats[lastGame].min)
                 let game = parseInt(stats[lastGame].gameId)
@@ -77,8 +78,16 @@ const Player = (props) => {
                     recentStats.unshift(stats[lastGame]);
                 }
                 lastGame -=1
+                if (lastGame < 0) {
+                    enoughGames = false
+                    setPlayerStats([])
+                    break
+                }
             }
-            setPlayerStats(recentStats)
+            if (enoughGames) {
+                setPlayerStats(recentStats)
+            }
+            
         })
         //clear results
         setResults([])
