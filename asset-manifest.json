@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/nets-app/static/css/main.4089761e.chunk.css",
-    "main.js": "/nets-app/static/js/main.695bea50.chunk.js",
-    "main.js.map": "/nets-app/static/js/main.695bea50.chunk.js.map",
+    "main.css": "/nets-app/static/css/main.520c4f54.chunk.css",
+    "main.js": "/nets-app/static/js/main.b79995b6.chunk.js",
+    "main.js.map": "/nets-app/static/js/main.b79995b6.chunk.js.map",
     "runtime-main.js": "/nets-app/static/js/runtime-main.df86ce1c.js",
     "runtime-main.js.map": "/nets-app/static/js/runtime-main.df86ce1c.js.map",
-    "static/js/2.d3c7ea33.chunk.js": "/nets-app/static/js/2.d3c7ea33.chunk.js",
-    "static/js/2.d3c7ea33.chunk.js.map": "/nets-app/static/js/2.d3c7ea33.chunk.js.map",
+    "static/js/2.8fb9260c.chunk.js": "/nets-app/static/js/2.8fb9260c.chunk.js",
+    "static/js/2.8fb9260c.chunk.js.map": "/nets-app/static/js/2.8fb9260c.chunk.js.map",
     "static/js/3.3768322e.chunk.js": "/nets-app/static/js/3.3768322e.chunk.js",
     "static/js/3.3768322e.chunk.js.map": "/nets-app/static/js/3.3768322e.chunk.js.map",
     "index.html": "/nets-app/index.html",
-    "static/css/main.4089761e.chunk.css.map": "/nets-app/static/css/main.4089761e.chunk.css.map",
-    "static/js/2.d3c7ea33.chunk.js.LICENSE.txt": "/nets-app/static/js/2.d3c7ea33.chunk.js.LICENSE.txt"
+    "static/css/main.520c4f54.chunk.css.map": "/nets-app/static/css/main.520c4f54.chunk.css.map",
+    "static/js/2.8fb9260c.chunk.js.LICENSE.txt": "/nets-app/static/js/2.8fb9260c.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.df86ce1c.js",
-    "static/js/2.d3c7ea33.chunk.js",
-    "static/css/main.4089761e.chunk.css",
-    "static/js/main.695bea50.chunk.js"
+    "static/js/2.8fb9260c.chunk.js",
+    "static/css/main.520c4f54.chunk.css",
+    "static/js/main.b79995b6.chunk.js"
   ]
 }
