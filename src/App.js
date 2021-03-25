@@ -19,8 +19,8 @@ function App() {
   const color2 = "green"
 
 
-  //console.log(playerOneStats)
-  //console.log(playerTwoStats)
+  console.log(playerOneStats)
+  console.log(playerTwo)
 
 
   return (

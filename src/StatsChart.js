@@ -35,53 +35,29 @@ const StatsChart = (props) => {
     //populate w stats
     //wont render the line if no stats
     if (playerOneStats.length > 0) {
-        //player has not played enough games
-        if (numGames > playerOneStats.length) {
-            //show however many games possible
-            for (let i = 0; i < playerOneStats.length; i++) {
-                combinedStats[i].p1Pts = playerOneStats[i].points;
-                combinedStats[i].p1Asts = playerOneStats[i].assists;
-                combinedStats[i].p1Reb = playerOneStats[i].totReb;
-                combinedStats[i].p1GameId = playerOneStats[i].gameId;
-                combinedStats[i].p1Tpm = playerOneStats[i].tpm;
-            }
-        }
-        else {
-            let x = 0;
-            for (let i = playerOneStats.length - numGames; i < playerOneStats.length; i++) {
-                combinedStats[x].p1Pts = playerOneStats[i].points;
-                combinedStats[x].p1Asts = playerOneStats[i].assists;
-                combinedStats[x].p1Reb = playerOneStats[i].totReb;
-                combinedStats[x].p1GameId = playerOneStats[i].gameId;
-                combinedStats[x].p1Tpm = playerOneStats[i].tpm;
-                x += 1;
-                //any other stats that you want a visualization of
-                //can be added here
-            }
+        let x = 0;
+        for (let i = 25 - numGames; i < 25; i++) {
+            combinedStats[x].p1Pts = playerOneStats[i].points;
+            combinedStats[x].p1Asts = playerOneStats[i].assists;
+            combinedStats[x].p1Reb = playerOneStats[i].totReb;
+            combinedStats[x].p1GameId = playerOneStats[i].gameId;
+            combinedStats[x].p1Tpm = playerOneStats[i].tpm;
+            x += 1;
+            //any other stats that you want a visualization of
+            //can be added here
         }
     }
     if (playerTwoStats.length > 0) {
-        if (numGames > playerTwoStats.length) {
-            for (let i = 0; i < playerTwoStats.length; i++) {
-                combinedStats[i].p2Pts = playerTwoStats[i].points;
-                combinedStats[i].p2Asts = playerTwoStats[i].assists;
-                combinedStats[i].p2Reb = playerTwoStats[i].totReb;
-                combinedStats[i].p2GameId = playerTwoStats[i].gameId;
-                combinedStats[i].p2Tpm = playerTwoStats[i].tpm;
-            }
-        }
-        else {
-            let x = 0;
-            for (let i = playerTwoStats.length - numGames; i < playerTwoStats.length; i++) {
-                combinedStats[x].p2Pts = playerTwoStats[i].points;
-                combinedStats[x].p2Asts = playerTwoStats[i].assists;
-                combinedStats[x].p2Reb = playerTwoStats[i].totReb;
-                combinedStats[x].p2GameId = playerTwoStats[i].gameId;
-                combinedStats[x].p2Tpm = playerTwoStats[i].tpm;
-                x += 1;
-                //any other stats that you want a visualization of
-                //can be added here
-            }
+        let x = 0;
+        for (let i = 25 - numGames; i < 25; i++) {
+            combinedStats[x].p2Pts = playerTwoStats[i].points;
+            combinedStats[x].p2Asts = playerTwoStats[i].assists;
+            combinedStats[x].p2Reb = playerTwoStats[i].totReb;
+            combinedStats[x].p2GameId = playerTwoStats[i].gameId;
+            combinedStats[x].p2Tpm = playerTwoStats[i].tpm;
+            x += 1;
+            //any other stats that you want a visualization of
+            //can be added here
         }
     }
 
