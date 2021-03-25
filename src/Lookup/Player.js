@@ -69,6 +69,8 @@ const Player = (props) => {
         makeStatsRequest().then( (stats) => {
             let recentStats = []
             let lastGame = stats.length - 1
+            //flag to check if player hasnt played 25 games
+            let enoughGames = true
             while (recentStats.length < 25) {
                 let minPlayed = parseInt(stats[lastGame].min)
                 let game = parseInt(stats[lastGame].gameId)
@@ -77,8 +79,16 @@ const Player = (props) => {
                     recentStats.unshift(stats[lastGame]);
                 }
                 lastGame -=1
+                if (lastGame < 0) {
+                    //player has played less than 25 career games
+                    setPlayerStats(recentStats)
+                    enoughGames = false
+                    break
+                }
             }
-            setPlayerStats(recentStats)
+            if (enoughGames) {
+                setPlayerStats(recentStats)
+            }
         })
         //clear results
         setResults([])
