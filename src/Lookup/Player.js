@@ -5,7 +5,7 @@ import './Player.css'
 
 const Player = (props) => {
 
-    const { id, firstName, lastName, teamId , setPlayer, setPlayerStats, setResults} = props;
+    const { id, firstName, lastName, teamId , setPlayer, setPlayerStats, setResults, setSearched} = props;
 
 
     //use to show team in search results
@@ -82,6 +82,7 @@ const Player = (props) => {
         })
         //clear results
         setResults([])
+        setSearched(false)
     }
 
     //get team short name, to display in search results

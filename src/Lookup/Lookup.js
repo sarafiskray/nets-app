@@ -81,6 +81,7 @@ const Lookup = (props) => {
                     setPlayer = {setPlayer}
                     setPlayerStats = {setPlayerStats}
                     setResults = {setResults}
+                    setSearched = {setSearched}
                 />
             )
         })  
