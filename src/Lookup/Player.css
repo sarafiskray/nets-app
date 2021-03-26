@@ -7,6 +7,11 @@
 .collection-item span {
     color: black;
 }
-li.collection-item:hover {
-    background-color: #eeeeee;
+
+.p1 li.collection-item:hover {
+    background-color: #f3e5f5;
+}
+
+.p2 li.collection-item:hover {
+    background-color: #e8f5e9 ;
 }
