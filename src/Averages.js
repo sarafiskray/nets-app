@@ -67,7 +67,8 @@ const Averages = (props) => {
             avgs['fgp'] = ((totalFgm / totalFga) * 100).toFixed(1)
             avgs['totTpm'] = totalTpm
             avgs['totTpa'] = totalTpa
-            avgs['tpp'] = ((totalTpm / totalTpa) * 100).toFixed(1)
+            // should still return 0 if no 3s attempted
+            avgs['tpp'] = totalTpa > 0 ? ((totalTpm / totalTpa) * 100).toFixed(1) : (0).toFixed(1)
             avgs['plusMinus'] = totalPlusMinus
             return avgs
         }
