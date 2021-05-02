@@ -9,3 +9,7 @@
 table tbody tr td {
     width: 33%
 }
+
+.tabs .tab a{
+    color:grey;
+} /*Black color to the text*/

@@ -8,6 +8,31 @@ const StatsChart = (props) => {
     const {playerOneStats, playerTwoStats, numGames, setNumGames, playerOne, playerTwo} = props;
 
     const [active, setActive] = useState("points");
+
+     //headers for request by game, currently this request isnt being made
+     const gameOptions = {
+        method: 'GET',
+        url: 'https://api-nba-v1.p.rapidapi.com/games/gameId/',
+        headers: {
+          'x-rapidapi-key': 'ac51f32be0msh667db546ecb476ep1e1b64jsna2067267cb56',
+          'x-rapidapi-host': 'api-nba-v1.p.rapidapi.com'
+        }
+      };
+
+     //made this function to display game date and teams played on hover of chart
+     const getGameData = (game) => {
+        gameOptions['url'] += game;
+        axios.request(gameOptions)
+        .then( (resp) => {
+            let gameData = resp.data.api.games[0]
+            let gameDate = gameData.startTimeUTC.slice(0, 10) 
+            let homeTeam = gameData.hTeam.shortName
+            let awayTeam = gameData.vTeam.shortName
+            let gameDetails = awayTeam + " vs. " + homeTeam + ", " + gameDate
+            console.log(gameDetails)
+            return gameDetails
+        }) 
+    }
   
 
     
@@ -40,7 +65,7 @@ const StatsChart = (props) => {
             combinedStats[x].p1Pts = playerOneStats[i].points;
             combinedStats[x].p1Asts = playerOneStats[i].assists;
             combinedStats[x].p1Reb = playerOneStats[i].totReb;
-            combinedStats[x].p1GameId = playerOneStats[i].gameId;
+            //combinedStats[x].p1Game = getGameData(playerOneStats[i].gameId);
             combinedStats[x].p1Tpm = playerOneStats[i].tpm;
             x += 1;
             //any other stats that you want a visualization of
@@ -53,7 +78,7 @@ const StatsChart = (props) => {
             combinedStats[x].p2Pts = playerTwoStats[i].points;
             combinedStats[x].p2Asts = playerTwoStats[i].assists;
             combinedStats[x].p2Reb = playerTwoStats[i].totReb;
-            combinedStats[x].p2GameId = playerTwoStats[i].gameId;
+            //combinedStats[x].p2Game = getGameData(playerTwoStats[i].gameId);
             combinedStats[x].p2Tpm = playerTwoStats[i].tpm;
             x += 1;
             //any other stats that you want a visualization of
@@ -112,30 +137,6 @@ const StatsChart = (props) => {
         if (active == "3PM") {
             return 15;
         }
-    }
-
-    //headers for request by game, currently this request isnt being made
-    const gameOptions = {
-        method: 'GET',
-        url: 'https://api-nba-v1.p.rapidapi.com/games/gameId/',
-        headers: {
-          'x-rapidapi-key': 'ac51f32be0msh667db546ecb476ep1e1b64jsna2067267cb56',
-          'x-rapidapi-host': 'api-nba-v1.p.rapidapi.com'
-        }
-      };
-
-    //made this function to display game date and teams played on hover of chart
-    const getGameData = (game) => {
-        gameOptions['url'] += game;
-        axios.request(gameOptions)
-        .then( (resp) => {
-            let gameData = resp.data.api.games[0]
-            let gameDate = gameData.startTimeUTC.slice(0, 10) 
-            let homeTeam = gameData.hTeam.shortName
-            let awayTeam = gameData.vTeam.shortName
-            console.log([gameDate, homeTeam, awayTeam])
-            return [gameDate, homeTeam, awayTeam]
-        }) 
     }
 
 
