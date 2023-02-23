@@ -61,12 +61,29 @@ const Player = (props) => {
         return stats;
     }
 
+    const makeStatsRequestNew = (id, season) => {
+        const options = {
+            method: 'GET',
+            url: 'https://api-nba-v1.p.rapidapi.com/players/statistics',
+            params: {id: id, season: season},
+            headers: {
+              'X-RapidAPI-Key': 'ac51f32be0msh667db546ecb476ep1e1b64jsna2067267cb56',
+              'X-RapidAPI-Host': 'api-nba-v1.p.rapidapi.com'
+            }
+          };
+
+        const promise = axios.request(options)
+        const stats = promise.then( resp => resp.data.response)
+        return stats;
+    }
+
     //on player select, set player and get recent stats
     //filtering out games in which they did not play
     const handleClick = (event) => {
         event.preventDefault()
         setPlayer(firstName + " " + lastName)
-        makeStatsRequest().then( (stats) => {
+        makeStatsRequestNew(id, 2022).then( (stats) => {
+            console.log(stats)
             let recentStats = []
             let lastGame = stats.length - 1
             let enoughGames = true

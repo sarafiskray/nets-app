@@ -15,6 +15,35 @@ const Lookup = (props) => {
 
     const [searched, setSearched] = useState(false);
 
+    const searchLastNameNew = event => {
+        event.preventDefault();
+        performSearchRequest(lName);
+    }
+
+    const performSearchRequest = (inputString) => {
+        const searchOptions = {
+            method: 'GET',
+            url: 'https://api-nba-v1.p.rapidapi.com/players',
+            headers: {
+              'X-RapidAPI-Key': 'ac51f32be0msh667db546ecb476ep1e1b64jsna2067267cb56',
+              'X-RapidAPI-Host': 'api-nba-v1.p.rapidapi.com'
+            },
+            params: {
+                search: inputString
+            }
+        };
+
+        axios.request(searchOptions)
+        .then((response) => {
+            console.log(response);
+            setResults(response.data.response);
+            setSearched(true);
+          })
+        .catch((error) => {
+            console.log("fail!")          
+        });
+    }
+
     let fNameOptions = {
         method: 'GET',
         url: 'https://api-nba-v1.p.rapidapi.com/players/firstName/',
@@ -73,11 +102,12 @@ const Lookup = (props) => {
         listPlayers = results.map ( item => {
             return (
                 <Player 
-                    key={item.playerId}
-                    id = {item.playerId}
-                    firstName = {item.firstName}
-                    lastName = {item.lastName}
-                    teamId = {item.teamId}
+                //these have been changed in an attempt to get the v2 to work - will stop v1 from working
+                    key={item.id}
+                    id = {item.id}
+                    firstName = {item.firstname}
+                    lastName = {item.lastname}
+                    //teamId = {item.teamId}
                     setPlayer = {setPlayer}
                     setPlayerStats = {setPlayerStats}
                     setResults = {setResults}
@@ -98,7 +128,7 @@ const Lookup = (props) => {
                 lName = {lName}
                 setfName = {setfName}
                 setlName = {setlName}
-                searchlName = {searchlName}
+                searchlName = {searchLastNameNew}
                 searchfName = {searchfName}
                 color = {color}
             />
