@@ -139,6 +139,9 @@ const StatsChart = (props) => {
         }
     }
 
+   
+
+    //make chips their own component
 
     return (
         <Fragment>

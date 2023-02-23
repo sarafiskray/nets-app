@@ -1,8 +1,8 @@
 import './App.css';
 import Lookup from './Lookup/Lookup.js';
 import React, { useState } from 'react';
-import Averages from './Averages.js'
-import StatsChart from './StatsChart.js'
+import Averages from './Charts/Averages.js'
+import StatsChart from './Charts/StatsChart.js'
 
 function App() {
 
@@ -18,10 +18,8 @@ function App() {
   const color1 = "purple";
   const color2 = "green"
 
-
   console.log(playerOneStats)
   console.log(playerTwo)
-
 
   return (
     <div className="grey lighten-4">
