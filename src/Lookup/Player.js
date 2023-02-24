@@ -135,7 +135,7 @@ const Player = (props) => {
             <p> {firstName} {lastName} 
             {/* uncomment this to show team name in search results
             some players are in the database who are no longer in the NBA */}
-            <span className="secondary-content"> { position } </span> 
+            <span className="secondary-content"> { position ?? "n/a" } </span> 
             </p>
         </li>
     )
