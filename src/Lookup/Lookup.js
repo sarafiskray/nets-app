@@ -110,6 +110,7 @@ const Lookup = (props) => {
                     firstName = {item.firstname}
                     lastName = {item.lastname}
                     //teamId = {item.teamId}
+                    position = {item.leagues?.standard?.pos}
                     setPlayer = {setPlayer}
                     setPlayerStats = {setPlayerStats}
                     setResults = {setResults}

@@ -5,7 +5,7 @@ import './Player.css'
 
 const Player = (props) => {
 
-    const { id, firstName, lastName, teamId , setPlayer, setPlayerStats, setResults, setSearched} = props;
+    const { id, firstName, lastName, position , setPlayer, setPlayerStats, setResults, setSearched} = props;
 
 
     //use to show team in search results
@@ -88,6 +88,12 @@ const Player = (props) => {
             let lastGame = stats.length - 1
             let enoughGames = true
             while (recentStats.length < 25) {
+                if (stats.length == 0) {
+                    enoughGames = false
+                    setPlayerStats([])
+                    setPlayer(firstName + " " + lastName + " (not qualified, min 25 games)")
+                    break
+                }
                 let minPlayed = parseInt(stats[lastGame].min)
                 let game = parseInt(stats[lastGame].gameId)
                 //8784 is all-star game
@@ -129,7 +135,7 @@ const Player = (props) => {
             <p> {firstName} {lastName} 
             {/* uncomment this to show team name in search results
             some players are in the database who are no longer in the NBA */}
-            <span className="secondary-content"> { teamShortName(teamId) } </span> 
+            <span className="secondary-content"> { position } </span> 
             </p>
         </li>
     )
