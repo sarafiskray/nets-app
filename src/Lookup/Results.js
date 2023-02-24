@@ -7,7 +7,7 @@ const Results = (props) => {
 
     return (
         <Fragment>
-            <p className="center-align">Enter full first or last name</p>
+            <p className="center-align">Enter at least first three characters of last name</p>
             <ul className="collection">
                 { listPlayers }
                 { searched && listPlayers.length == 0 ? (

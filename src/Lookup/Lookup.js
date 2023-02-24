@@ -44,55 +44,57 @@ const Lookup = (props) => {
         });
     }
 
-    let fNameOptions = {
-        method: 'GET',
-        url: 'https://api-nba-v1.p.rapidapi.com/players/firstName/',
-        headers: {
-          'x-rapidapi-key': 'ac51f32be0msh667db546ecb476ep1e1b64jsna2067267cb56',
-          'x-rapidapi-host': 'api-nba-v1.p.rapidapi.com'
-        }
-      };
+    // //API V1
+
+    // let fNameOptions = {
+    //     method: 'GET',
+    //     url: 'https://api-nba-v1.p.rapidapi.com/players/firstName/',
+    //     headers: {
+    //       'x-rapidapi-key': 'ac51f32be0msh667db546ecb476ep1e1b64jsna2067267cb56',
+    //       'x-rapidapi-host': 'api-nba-v1.p.rapidapi.com'
+    //     }
+    //   };
     
-    let lNameOptions = {
-        method: 'GET',
-        url: 'https://api-nba-v1.p.rapidapi.com/players/lastName/',
-        headers: {
-          'x-rapidapi-key': 'ac51f32be0msh667db546ecb476ep1e1b64jsna2067267cb56',
-          'x-rapidapi-host': 'api-nba-v1.p.rapidapi.com'
-        }
-      };
+    // let lNameOptions = {
+    //     method: 'GET',
+    //     url: 'https://api-nba-v1.p.rapidapi.com/players/lastName/',
+    //     headers: {
+    //       'x-rapidapi-key': 'ac51f32be0msh667db546ecb476ep1e1b64jsna2067267cb56',
+    //       'x-rapidapi-host': 'api-nba-v1.p.rapidapi.com'
+    //     }
+    //   };
 
-    //make request by first name
-    const searchfName = event => {
-        event.preventDefault();
+    // //make request by first name
+    // const searchfName = event => {
+    //     event.preventDefault();
 
-        fNameOptions['url'] += fName;
-        axios.request(fNameOptions)
-        .then ( resp => {
-            setResults(resp.data.api.players)
-            setSearched(true)
+    //     fNameOptions['url'] += fName;
+    //     axios.request(fNameOptions)
+    //     .then ( resp => {
+    //         setResults(resp.data.api.players)
+    //         setSearched(true)
             
-        })
-        .catch ( err => {
-            console.log(err)
-        })
+    //     })
+    //     .catch ( err => {
+    //         console.log(err)
+    //     })
 
-    }
+    // }
 
-    //make request by last name
-    const searchlName = event => {
-        event.preventDefault()
+    // //make request by last name
+    // const searchlName = event => {
+    //     event.preventDefault()
         
-        lNameOptions['url'] += lName;
-        axios.request(lNameOptions)
-        .then ( resp => {
-            setResults(resp.data.api.players)
-            setSearched(true)
-        })
-        .catch ( err => {
-            console.log(err)
-        })
-    } 
+    //     lNameOptions['url'] += lName;
+    //     axios.request(lNameOptions)
+    //     .then ( resp => {
+    //         setResults(resp.data.api.players)
+    //         setSearched(true)
+    //     })
+    //     .catch ( err => {
+    //         console.log(err)
+    //     })
+    // } 
 
     //console.log(searched)
 
@@ -124,12 +126,12 @@ const Lookup = (props) => {
     return (
         <Fragment>
             <Search 
-                fName = {fName}
+                // fName = {fName}
                 lName = {lName}
                 setfName = {setfName}
                 setlName = {setlName}
                 searchlName = {searchLastNameNew}
-                searchfName = {searchfName}
+                // searchfName = {searchfName}
                 color = {color}
             />
             <Results 
