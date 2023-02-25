@@ -3,6 +3,7 @@ import Lookup from './Lookup/Lookup.js';
 import React, { useState } from 'react';
 import Averages from './Charts/Averages.js'
 import StatsChart from './Charts/StatsChart.js'
+import HexagonChart from './Charts/HexagonChart.js'
 
 function App() {
 
@@ -58,6 +59,19 @@ function App() {
             playerOne={playerOne}
             playerTwo={playerTwo}
           />
+        </div>
+      </div>
+      <div className="container ">
+        <div className="card hoverable corners">
+          {/* <HexagonChart 
+            playerOneStats={playerOneStats}
+            playerTwoStats={playerTwoStats}
+            numGames = {numGames}
+            setNumGames = {setNumGames}
+            //for legend
+            playerOne={playerOne}
+            playerTwo={playerTwo}
+          /> */}
         </div>
       </div>
       <div className="container mySection">
