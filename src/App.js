@@ -63,7 +63,7 @@ function App() {
       </div>
       <div className="container ">
         <div className="card hoverable corners">
-          {/* <HexagonChart 
+          <HexagonChart 
             playerOneStats={playerOneStats}
             playerTwoStats={playerTwoStats}
             numGames = {numGames}
@@ -71,7 +71,7 @@ function App() {
             //for legend
             playerOne={playerOne}
             playerTwo={playerTwo}
-          /> */}
+          />
         </div>
       </div>
       <div className="container mySection">
