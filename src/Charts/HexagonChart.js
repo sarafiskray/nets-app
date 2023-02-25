@@ -87,7 +87,8 @@ const HexagonChart = (props) => {
             <PolarRadiusAxis tick={false} angle={30} domain={[0, 'dataMax']} />
             <Radar name={playerOne ?? ""} dataKey="p1" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
             <Radar name={playerTwo ?? ""} dataKey="p2" stroke="#82ca9d" fill="#82ca9d" fillOpacity={0.6} />
-            <Legend />
+            <Legend payload={[{ id: 'p1', value: playerOne, type: "rect", color: '#8884d8' },{ id: 'p2', value: playerTwo, type: 'rect', color: '#82ca9d'}]} 
+                    wrapperStyle={{left: 12}}/>
           </RadarChart>
         </ResponsiveContainer>
       )    

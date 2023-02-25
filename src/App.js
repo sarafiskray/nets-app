@@ -48,7 +48,7 @@ function App() {
           </div>
         </div>
       </div>
-      <div className="container ">
+      <div className="container">
         <div className="card hoverable corners">
           <StatsChart 
             playerOneStats={playerOneStats}
@@ -61,7 +61,7 @@ function App() {
           />
         </div>
       </div>
-      <div className="container ">
+      <div className="container mySection">
         <div className="card hoverable corners">
           <HexagonChart 
             playerOneStats={playerOneStats}
@@ -74,7 +74,7 @@ function App() {
           />
         </div>
       </div>
-      <div className="container mySection">
+      <div className="container ">
         <div className="card hoverable corners">
           <Averages
             playerOneStats={playerOneStats}
